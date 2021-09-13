@@ -1,1 +1,3 @@
-# ![{{ DaftPyPosh }} logo](./images/Logo.png)
+# {{ DaftPyPosh }}
+
+![{{ DaftPyPosh }} logo](./images/Logo.png)
