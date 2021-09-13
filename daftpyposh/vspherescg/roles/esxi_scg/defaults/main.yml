@@ -1,2 +1,15 @@
 ---
 # defaults file for esxi_scg
+
+## Choose Tasks
+esxi_scg_ntp: false
+
+## General
+hostname: 'vcenter.lab.local
+username: 'Administrator@vsphere.local'
+password: 'C0mpl3x!'
+cluster_name: 'lab'
+
+## NTP
+ntp1: 'de.pool.ntp.org'
+ntp2: 'us.pool.ntp.org'

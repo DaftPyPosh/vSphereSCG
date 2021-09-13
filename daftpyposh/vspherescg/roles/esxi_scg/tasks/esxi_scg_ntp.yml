@@ -1,0 +1,36 @@
+---
+- name: Manage NTP Firewall Rules
+  community.vmware.vmware_host_firewall_manager:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    cluster_name: "{{ cluster_name }}"  
+    validate_certs: no
+    rules:
+    - name: ntpClient
+      enabled: True
+      allowed_hosts:
+      all_ip: False
+      ip_address:
+      - "{{ ntp1 }}"
+      - "{{ ntp2 }}"
+- name: Set NTP servers
+  community.vmware.vmware_host_ntp:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        cluster_name: "{{ cluster_name }}"
+        validate_certs: no  
+        ntp_servers:
+        - "{{ ntp1 }}"
+        - "{{ ntps }}"
+- name: Set NTP Service
+  community.vmware.vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        cluster_name: "{{ cluster_name }}"
+        validate_certs: no
+        service_name: ntpd
+        state: start
+        service_policy: on 
