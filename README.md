@@ -4,12 +4,12 @@
 
 ## Team Members
 
-- Barry Browne
-- Bill Kindle
-- Carl Capozza
-- David Prows
-- Jon Husen
-- Justin Brant
+- Barry Browne [@barrybrowne](https://twitter.com/barrybrowne)
+- Bill Kindle [@billkindle](https://www.linkedin.com/in/billkindle/)
+- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
+- David Prows [@Commputethis](https://twitter.com/commputethis)
+- Jon Husen [@JonHusen](https://twitter.com/JonHusen)
+- Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
 
 ## The Idea
