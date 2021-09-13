@@ -1,4 +1,4 @@
-# VMware {Code} Hackathon 2021 - Team DaftPyPosh - vSphereSCG
+# VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
 ![Logo](images/logo_1_500x126.png)
 
