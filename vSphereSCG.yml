@@ -8,8 +8,8 @@
     cluster_name: 'lab'
 
     esxi_scg_ntp: true
-    ntp1: 'de.pool.ntp.org'
-    ntp2: 'us.pool.ntp.org'
+    ntp1: '192.168.2.100'
+    ntp2: '192.168.2.101'
   collections:
     - daftpyposh.vspherescg
   tasks:

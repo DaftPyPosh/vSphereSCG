@@ -11,5 +11,5 @@ vcenter_password: 'C0mpl3x!'
 cluster_name: 'lab'
 
 ## NTP
-ntp1: 'de.pool.ntp.org'
-ntp2: 'us.pool.ntp.org'
+ntp1: '192.168.2.100'
+ntp2: '192.168.2.101'
