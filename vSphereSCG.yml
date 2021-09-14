@@ -1,0 +1,11 @@
+- name: example role by FQCN
+  hosts: localhost
+  gather_facts: false
+  vars:
+    esxi_scg_ntp: true
+  collections:
+    - daftpyposh.vspherescg
+  tasks:
+    - name: import ESXi role from a collection
+      import_role:
+        name: daftpyposh.vspherescg.esxi_scg
