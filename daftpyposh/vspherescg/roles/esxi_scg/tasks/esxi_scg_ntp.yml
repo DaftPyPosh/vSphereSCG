@@ -23,7 +23,7 @@
     validate_certs: false
     ntp_servers:
       - "{{ ntp1 }}"
-      - "{{ ntps }}"
+      - "{{ ntp2 }}"
 - name: Set NTP Service
   community.vmware.vmware_host_service_manager:
     hostname: "{{ vcenter_hostname }}"
