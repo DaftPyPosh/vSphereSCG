@@ -1,4 +1,0 @@
----
-# tasks file for esxi_scg
-- include_tasks: esxi_scg_ntp.yml
-  when: esxi_scg_ntp | bool
