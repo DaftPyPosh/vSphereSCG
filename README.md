@@ -101,3 +101,16 @@ The Project is shipped as an Ansible Collection with Roles. The Roles do contain
             └── vars
                 └── main.yml
 ```
+## Usage
+
+### Install Ansible
+
+### Instaall VMware Community Collection
+
+```ansible-galaxy collection install community.vmware```
+
+### Run Playbook
+
+```ansible-playbook vSphereSCG.ym```
+
+
