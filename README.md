@@ -108,7 +108,7 @@ daftpyposh
 
 ### Install Ansible
 
-### Instaall VMware Community Collection
+### Install VMware Community Collection
 
 ```ansible-galaxy collection install community.vmware```
 
@@ -128,8 +128,7 @@ Cryptography, audit logging, cluster operations, and incident response/forensics
 - Set NTP servers
 - Set NTP Service
 
-
-###  esxi-7.lockdown-mode
+### esxi-7.lockdown-mode
 
 Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode. 
 
