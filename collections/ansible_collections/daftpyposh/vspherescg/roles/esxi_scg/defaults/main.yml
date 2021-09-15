@@ -5,11 +5,13 @@
 esxi_scg_ntp: false
 
 ## General
-hostname: 'vcenter.lab.local'
-username: 'Administrator@vsphere.local'
-password: 'C0mpl3x!'
+vcenter_hostname: 'vcenter.lab.local'
+vcenter_username: 'Administrator@vsphere.local'
+vcenter_password: 'C0mpl3x!'
 cluster_name: 'lab'
 
 ## NTP
-ntp1: 'de.pool.ntp.org'
-ntp2: 'us.pool.ntp.org'
+ntp1: '192.168.2.100'
+ntp2: '192.168.2.101'
+ntp3: '192.168.2.102'
+ntp4: '192.168.2.103'

@@ -10,10 +10,12 @@
       - name: ntpClient
         enabled: true
         allowed_hosts:
-        all_ip: false
-        ip_address:
-          - "{{ ntp1 }}"
-          - "{{ ntp2 }}"
+          all_ip: false
+          ip_address:
+            - "{{ ntp1 }}"
+            - "{{ ntp2 }}"
+            - "{{ ntp3 }}"
+            - "{{ ntp4 }}"
 - name: Set NTP servers
   community.vmware.vmware_host_ntp:
     hostname: "{{ vcenter_hostname }}"
@@ -24,6 +26,8 @@
     ntp_servers:
       - "{{ ntp1 }}"
       - "{{ ntp2 }}"
+      - "{{ ntp3 }}"
+      - "{{ ntp4 }}"
 - name: Set NTP Service
   community.vmware.vmware_host_service_manager:
     hostname: "{{ vcenter_hostname }}"

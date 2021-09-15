@@ -42,63 +42,90 @@ Some examples how this configurations are possible:
 
 The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
 
-```Markdown
-└── vspherescg
-    ├── docs
-    ├── galaxy.yml
-    ├── plugins
-    │   └── README.md
-    ├── README.md
-    └── roles
-        ├── esxi_scg
-        │   ├── defaults
-        │   │   └── main.yml
-        │   ├── files
-        │   ├── handlers
-        │   │   └── main.yml
-        │   ├── meta
-        │   │   └── main.yml
-        │   ├── README.md
-        │   ├── tasks
-        │   │   └── main.yml
-        │   ├── templates
-        │   ├── tests
-        │   │   ├── inventory
-        │   │   └── test.yml
-        │   └── vars
-        │       └── main.yml
-        ├── vcenter_scg
-        │   ├── defaults
-        │   │   └── main.yml
-        │   ├── files
-        │   ├── handlers
-        │   │   └── main.yml
-        │   ├── meta
-        │   │   └── main.yml
-        │   ├── README.md
-        │   ├── tasks
-        │   │   └── main.yml
-        │   ├── templates
-        │   ├── tests
-        │   │   ├── inventory
-        │   │   └── test.yml
-        │   └── vars
-        │       └── main.yml
-        └── vm_scg
-            ├── defaults
-            │   └── main.yml
-            ├── files
-            ├── handlers
-            │   └── main.yml
-            ├── meta
-            │   └── main.yml
-            ├── README.md
-            ├── tasks
-            │   └── main.yml
-            ├── templates
-            ├── tests
-            │   ├── inventory
-            │   └── test.yml
-            └── vars
-                └── main.yml
 ```
+daftpyposh
+└── vspherescg
+ ├── docs
+ ├── galaxy.yml
+ ├── plugins
+ │   └── README.md
+ ├── README.md
+ └── roles
+	 ├── esxi_scg
+	 │   ├── defaults
+	 │   │   └── main.yml
+	 │   ├── files
+	 │   ├── handlers
+	 │   │   └── main.yml
+	 │   ├── meta
+	 │   │   └── main.yml
+	 │   ├── README.md
+	 │   ├── tasks
+	 │   │   ├── esxi_scg_ntp.yml
+	 │   │   └── main.yml
+	 │   ├── templates
+	 │   ├── tests
+	 │   │   ├── inventory
+	 │   │   └── test.yml
+	 │   └── vars
+	 │       └── main.yml
+	 ├── vcenter_scg
+	 │   ├── defaults
+	 │   │   └── main.yml
+	 │   ├── files
+	 │   ├── handlers
+	 │   │   └── main.yml
+	 │   ├── meta
+	 │   │   └── main.yml
+	 │   ├── README.md
+	 │   ├── tasks
+	 │   │   └── main.yml
+	 │   ├── templates
+	 │   ├── tests
+	 │   │   ├── inventory
+	 │   │   └── test.yml
+	 │   └── vars
+	 │       └── main.yml
+	 └── vm_scg
+		 ├── defaults
+		 │   └── main.yml
+		 ├── files
+		 ├── handlers
+		 │   └── main.yml
+		 ├── meta
+		 │   └── main.yml
+		 ├── README.md
+		 ├── tasks
+		 │   └── main.yml
+		 ├── templates
+		 ├── tests
+		 │   ├── inventory
+		 │   └── test.yml
+		 └── vars
+			 └── main.yml
+```
+## Usage
+
+### Install Ansible
+
+### Instaall VMware Community Collection
+
+```ansible-galaxy collection install community.vmware```
+
+### Run Playbook
+
+```ansible-playbook vSphereSCG.ym```
+
+## Features
+
+### ESXi
+
+#### esxi-7.timekeeping
+
+Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
+
+- Manage NTP Firewall Rules
+- Set NTP servers
+- Set NTP Service
+
+
