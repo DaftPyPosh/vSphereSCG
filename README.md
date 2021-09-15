@@ -122,6 +122,8 @@ daftpyposh
 
 #### esxi-7.timekeeping
 
+Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
+
 - Manage NTP Firewall Rules
 - Set NTP servers
 - Set NTP Service

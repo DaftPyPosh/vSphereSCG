@@ -10,6 +10,8 @@
     esxi_scg_ntp: true
     ntp1: '192.168.2.100'
     ntp2: '192.168.2.101'
+    ntp3: '192.168.2.102'
+    ntp4: '192.168.2.103'
   collections:
     - daftpyposh.vspherescg
   tasks:
