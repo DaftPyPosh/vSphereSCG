@@ -35,10 +35,11 @@ Some examples how this configurations are possible:
 ## Goals
 
 - 100% of recommendations should be possible (as long as it's not a permanent task like "ESXi is up to date." )
-- Configurable which Recommendations should be applied 
+- Configurable which Recommendations should be applied
 - Deliverable as Ansible Collection via Ansible Galaxy
 
 ## Code Structure
+
 The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
 
 ```
