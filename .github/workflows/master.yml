@@ -24,8 +24,8 @@ jobs:
         #   playbook_1.yml
         #   playbook_2.yml
         targets: |
-          "collections/ansible_collections/daftpyposh/"
-          "vSphereSCG.yml"
+          collections/ansible_collections/daftpyposh/
+          vSphereSCG.yml
         # [optional]
         # Arguments to override a package and its version to be set explicitly.
         # Must follow the example syntax.
