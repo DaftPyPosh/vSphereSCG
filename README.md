@@ -42,64 +42,66 @@ Some examples how this configurations are possible:
 The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
 
 ```
+daftpyposh
 └── vspherescg
-    ├── docs
-    ├── galaxy.yml
-    ├── plugins
-    │   └── README.md
-    ├── README.md
-    └── roles
-        ├── esxi_scg
-        │   ├── defaults
-        │   │   └── main.yml
-        │   ├── files
-        │   ├── handlers
-        │   │   └── main.yml
-        │   ├── meta
-        │   │   └── main.yml
-        │   ├── README.md
-        │   ├── tasks
-        │   │   └── main.yml
-        │   ├── templates
-        │   ├── tests
-        │   │   ├── inventory
-        │   │   └── test.yml
-        │   └── vars
-        │       └── main.yml
-        ├── vcenter_scg
-        │   ├── defaults
-        │   │   └── main.yml
-        │   ├── files
-        │   ├── handlers
-        │   │   └── main.yml
-        │   ├── meta
-        │   │   └── main.yml
-        │   ├── README.md
-        │   ├── tasks
-        │   │   └── main.yml
-        │   ├── templates
-        │   ├── tests
-        │   │   ├── inventory
-        │   │   └── test.yml
-        │   └── vars
-        │       └── main.yml
-        └── vm_scg
-            ├── defaults
-            │   └── main.yml
-            ├── files
-            ├── handlers
-            │   └── main.yml
-            ├── meta
-            │   └── main.yml
-            ├── README.md
-            ├── tasks
-            │   └── main.yml
-            ├── templates
-            ├── tests
-            │   ├── inventory
-            │   └── test.yml
-            └── vars
-                └── main.yml
+ ├── docs
+ ├── galaxy.yml
+ ├── plugins
+ │   └── README.md
+ ├── README.md
+ └── roles
+	 ├── esxi_scg
+	 │   ├── defaults
+	 │   │   └── main.yml
+	 │   ├── files
+	 │   ├── handlers
+	 │   │   └── main.yml
+	 │   ├── meta
+	 │   │   └── main.yml
+	 │   ├── README.md
+	 │   ├── tasks
+	 │   │   ├── esxi_scg_ntp.yml
+	 │   │   └── main.yml
+	 │   ├── templates
+	 │   ├── tests
+	 │   │   ├── inventory
+	 │   │   └── test.yml
+	 │   └── vars
+	 │       └── main.yml
+	 ├── vcenter_scg
+	 │   ├── defaults
+	 │   │   └── main.yml
+	 │   ├── files
+	 │   ├── handlers
+	 │   │   └── main.yml
+	 │   ├── meta
+	 │   │   └── main.yml
+	 │   ├── README.md
+	 │   ├── tasks
+	 │   │   └── main.yml
+	 │   ├── templates
+	 │   ├── tests
+	 │   │   ├── inventory
+	 │   │   └── test.yml
+	 │   └── vars
+	 │       └── main.yml
+	 └── vm_scg
+		 ├── defaults
+		 │   └── main.yml
+		 ├── files
+		 ├── handlers
+		 │   └── main.yml
+		 ├── meta
+		 │   └── main.yml
+		 ├── README.md
+		 ├── tasks
+		 │   └── main.yml
+		 ├── templates
+		 ├── tests
+		 │   ├── inventory
+		 │   └── test.yml
+		 └── vars
+			 └── main.yml
 ```
 ## Usage
 
@@ -112,5 +114,15 @@ The Project is shipped as an Ansible Collection with Roles. The Roles do contain
 ### Run Playbook
 
 ```ansible-playbook vSphereSCG.ym```
+
+## Features
+
+### ESXi
+
+#### esxi-7.timekeeping
+
+- Manage NTP Firewall Rules
+- Set NTP servers
+- Set NTP Service
 
 
