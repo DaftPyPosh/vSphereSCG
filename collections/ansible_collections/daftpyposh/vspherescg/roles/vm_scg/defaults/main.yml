@@ -1,2 +1,11 @@
 ---
 # defaults file for vm_scg
+
+## Choose Setup
+vm_scg_disable_copy: false
+
+## General
+vcenter_hostname: 'vcenter.lab.local'
+vcenter_username: 'Administrator@vsphere.local'
+vcenter_password: 'C0mpl3x!'
+cluster_name: 'lab'

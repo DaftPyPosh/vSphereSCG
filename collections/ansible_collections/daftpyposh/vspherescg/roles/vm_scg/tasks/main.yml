@@ -1,2 +1,22 @@
 ---
 # tasks file for vm_scg
+- name: Gather all VMs
+  community.vmware.vmware_vm_info:
+    hostname: '{{ vcenter_hostname }}'
+    username: '{{ vcenter_username }}'
+    password: '{{ vcenter_password }}'
+    validate_certs: false
+    vm_type: vm
+  delegate_to: localhost
+  register: vm_info
+- name: Filter for cluster
+  ansible.builtin.set_fact:
+    vm_filtered: "{{ vm_info | json_query(vm_query) }}"
+  vars:
+    vm_query: 'virtual_machines[?cluster==`{{ cluster_name }}`]'
+- name: Debug Filtered VMs
+  ansible.builtin.debug:
+    var: vm_filtered
+
+- include_tasks: vm_scg_disable_copy.yml
+  when: vm_scg_disable_copy | bool

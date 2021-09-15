@@ -143,3 +143,11 @@ Note that users listed in the DCUI.Access list for each host are allowed to over
 By default the "root" user is the only user listed in the DCUI.Access list.
 
 There are three settings for lockdown mode: disabled, normal, and strict. The choice of strict means that if the ESXi host loses contact with vCenter Server it cannot be managed in any way until that connection is restored. If that connection cannot be restored the host will need to be rebuilt. This is beyond the needs of most deployments. As such, we recommend normal lockdown mode.
+
+### VM
+
+### vm-7.disable-console-copy
+
+Copy and paste operations are disabled by default. However, if you explicitly disable this feature audit controls can check that this setting is correct.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.

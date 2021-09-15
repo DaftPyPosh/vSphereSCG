@@ -14,9 +14,14 @@
     ntp4: '192.168.2.103'
 
     esxi_scg_lockdown: true
+
+    vm_scg_disable_copy: true
   collections:
     - daftpyposh.vspherescg
   tasks:
     - name: import ESXi role from a collection
       import_role:
         name: daftpyposh.vspherescg.esxi_scg
+    - name: import VM role from a collection
+      import_role:
+        name: daftpyposh.vspherescg.vm_scg
