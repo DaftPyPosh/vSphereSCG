@@ -8,3 +8,4 @@
     validate_certs: false
     service_name: TSM-SSH
     state: absent
+    service_policy: off
