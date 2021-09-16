@@ -19,9 +19,12 @@
   collections:
     - daftpyposh.vspherescg
   tasks:
-    - name: import ESXi role from a collection
+    - name: import vCenter role from a collection
       import_role:
-        name: daftpyposh.vspherescg.esxi_scg
-    - name: import VM role from a collection
-      import_role:
-        name: daftpyposh.vspherescg.vm_scg
+        name: daftpyposh.vspherescg.vcenter_scg
+    #- name: import ESXi role from a collection
+    #  import_role:
+    #    name: daftpyposh.vspherescg.esxi_scg
+    #- name: import VM role from a collection
+    #  import_role:
+    #    name: daftpyposh.vspherescg.vm_scg

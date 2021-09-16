@@ -1,2 +1,16 @@
 ---
 # defaults file for vcenter_scg
+## Choose Setup
+vcenter_scg_ntp: false
+
+## General
+vcenter_hostname: 'vcenter.lab.local'
+vcenter_username: 'Administrator@vsphere.local'
+vcenter_password: 'C0mpl3x!'
+cluster_name: 'lab'
+
+## NTP
+vc_ntp1: '192.168.2.100'
+vc_ntp2: '192.168.2.101'
+vc_ntp3: '192.168.2.102'
+vc_ntp4: '192.168.2.103'

@@ -1,2 +1,12 @@
 ---
 # tasks file for vcenter_scg
+- name: Connecto to vCenter API
+  uri:
+    url: https://{{ vcenter_hostname }}/api/session
+    user: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: false
+    method: POST
+    force_basic_auth: true
+    status_code: 201
+  register: vc_login
