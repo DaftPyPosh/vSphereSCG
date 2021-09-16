@@ -104,6 +104,17 @@ daftpyposh
 		 └── vars
 			 └── main.yml
 ```
+## Requirements
+
+### vSphere
+
+- Only vSphere Clusters can be managed, no single Hosts
+- VMware vSphere 7.0+
+
+### Ansible
+
+- Ansible 2.10.3+
+- community.vmware Collection 1.14.0+
 ## Usage
 
 ### Install Ansible
@@ -114,7 +125,7 @@ daftpyposh
 
 ### Run Playbook
 
-```ansible-playbook vSphereSCG.ym```
+```ansible-playbook vSphereSCG.yml```
 
 ## Features
 
