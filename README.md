@@ -14,7 +14,7 @@
 
 ## The Idea
 
-An Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an exisitng infrastructure.
+An Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing infrastructure.
 
 ### Examples around the idea
 
