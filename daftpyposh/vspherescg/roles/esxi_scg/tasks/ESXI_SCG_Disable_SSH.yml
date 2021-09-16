@@ -1,0 +1,10 @@
+---
+- name: Stop ssh setting for an ESXi Host
+  community.vmware.vmware_host_service_manager:
+    hostname: '{{ vcenter_hostname }}'
+    username: '{{ vcenter_username }}'
+    password: '{{ vcenter_password }}'
+    esxi_hostname: '{{ esxi_hostname }}'
+    service_name: TSM-SSH
+    state: absent
+  delegate_to: localhost
