@@ -1,5 +1,5 @@
 ---
-- name: Explicitly disable copy operations
+- name: Disable 3D features if not needed
   community.vmware.vmware_guest:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
@@ -8,7 +8,7 @@
     cluster: "{{ cluster_name }}"
     uuid: "{{ item.uuid }}"
     advanced_settings:
-      - key: "isolation.tools.copy.disable"
-        value: "True"
+      - key: "mks.enable3d"
+        value: "FALSE"
   when: "'vCLS (' not in item.guest_name"
   with_items: "{{ vm_filtered }}"

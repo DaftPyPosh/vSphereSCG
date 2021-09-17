@@ -1,5 +1,5 @@
 ---
-- name: Explicitly disable copy operations
+- name: Limit the number of console connections to one
   community.vmware.vmware_guest:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
@@ -8,7 +8,7 @@
     cluster: "{{ cluster_name }}"
     uuid: "{{ item.uuid }}"
     advanced_settings:
-      - key: "isolation.tools.copy.disable"
-        value: "True"
+      - key: "RemoteDisplay.maxConnections"
+        value: "1"
   when: "'vCLS (' not in item.guest_name"
   with_items: "{{ vm_filtered }}"

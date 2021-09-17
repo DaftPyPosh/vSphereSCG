@@ -3,6 +3,11 @@
 
 ## Choose Setup
 vm_scg_disable_copy: false
+vm_scg_disable_paste: false
+vm_scg_disable_disk_shrink: false
+vm_scg_disable_disk_wiper: false
+vm_scg_disable_3d: false
+vm_scg_limit_vmrc: false
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'
