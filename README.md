@@ -162,8 +162,18 @@ ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intende
 
 ### VM
 
-### vm-7.disable-console-copy
+#### vm-7.disable-console-copy
 
 Copy and paste operations are disabled by default. However, if you explicitly disable this feature audit controls can check that this setting is correct.
 
 As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+### vCenter
+
+#### vcenter-7.vami-time
+
+Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
+
+This was configured during install so it should be audited for correctness.
+
+

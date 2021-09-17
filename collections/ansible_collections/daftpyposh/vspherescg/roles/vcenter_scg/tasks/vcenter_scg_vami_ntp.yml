@@ -1,0 +1,38 @@
+---
+- name: Enable vCenter VAMI NTP
+  uri:
+    url: https://{{ vcenter_hostname }}/api/appliance/timesync
+    validate_certs: false
+    timeout: 60
+    method: PUT
+    body_format: json
+    status_code: 204
+    return_content: true
+    headers:
+      Content-Type: application/json
+      vmware-api-session-id: "{{ vc_token }}"
+    body: |
+        {
+            "mode": "NTP"
+        }
+- name: Set vCenter VAMI NTP Servers
+  uri:
+    url: https://{{ vcenter_hostname }}/api/appliance/ntp
+    validate_certs: false
+    timeout: 60
+    method: PUT
+    body_format: json
+    status_code: 204
+    return_content: true
+    headers:
+      Content-Type: application/json
+      vmware-api-session-id: "{{ vc_token }}"
+    body: |
+        {
+        "servers": [
+            "{{ vc_ntp1 }}",
+            "{{ vc_ntp2 }}",
+            "{{ vc_ntp3 }}",
+            "{{ vc_ntp4 }}"
+            ]
+        }
