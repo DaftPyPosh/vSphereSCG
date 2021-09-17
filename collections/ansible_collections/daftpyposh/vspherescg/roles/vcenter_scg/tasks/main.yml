@@ -1,2 +1,18 @@
 ---
 # tasks file for vcenter_scg
+- name: Connecto to vCenter API
+  uri:
+    url: https://{{ vcenter_hostname }}/api/session
+    user: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: false
+    method: POST
+    force_basic_auth: true
+    status_code: 201
+  register: vc_login
+- name: Set vCenter Authentication Token
+  ansible.builtin.set_fact:
+    vc_token: "{{ vc_login.vmware_api_session_id }}"
+
+- include_tasks: vcenter_scg_vami_ntp.yml
+  when: vcenter_scg_vami_ntp | bool

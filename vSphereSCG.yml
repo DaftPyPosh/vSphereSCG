@@ -17,14 +17,13 @@
     esxi_scg_ssh: true
 
     vm_scg_disable_copy: true
-    vm_scg_disable_paste: true
-    vm_scg_disable_disk_shrink: true
-    vm_scg_disable_disk_wiper: true
-    vm_scg_disable_3d: true
-    vm_scg_limit_vmrc: true
+
   collections:
     - daftpyposh.vspherescg
   tasks:
+    - name: import vCenter role from a collection
+      import_role:
+        name: daftpyposh.vspherescg.vcenter_scg
     - name: import ESXi role from a collection
       import_role:
         name: daftpyposh.vspherescg.esxi_scg
