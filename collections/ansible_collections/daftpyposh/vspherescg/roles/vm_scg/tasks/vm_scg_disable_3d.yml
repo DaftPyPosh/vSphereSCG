@@ -9,6 +9,6 @@
     uuid: "{{ item.uuid }}"
     advanced_settings:
       - key: "mks.enable3d"
-        value: "False"
+        value: "FALSE"
   when: "'vCLS (' not in item.guest_name"
   with_items: "{{ vm_filtered }}"
