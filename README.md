@@ -162,8 +162,37 @@ ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intende
 
 ### VM
 
-### vm-7.disable-console-copy
+#### vm-7.disable-console-copy
 
 Copy and paste operations are disabled by default. However, if you explicitly disable this feature audit controls can check that this setting is correct.
 
 As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-console-paste
+
+Copy and paste operations are disabled by default, however, if you explicitly disable this feature, audit controls can check that this setting is correct.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-disk-shrinking-shrink
+
+Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-disk-shrinking-wiper
+
+Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-non-essential-3d-features
+
+It is suggested that 3D be disabled on virtual machines that do not require 3D functionality, (e.g. server or desktops not using 3D applications). 
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to FALSE.
+
+#### vm-7.limit-console-connections
+
+Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
+

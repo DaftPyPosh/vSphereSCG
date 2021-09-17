@@ -17,6 +17,17 @@
 - name: Debug Filtered VMs
   ansible.builtin.debug:
     var: vm_filtered
+    verbosity: 2
 
 - include_tasks: vm_scg_disable_copy.yml
   when: vm_scg_disable_copy | bool
+- include_tasks: vm_scg_disable_paste.yml
+  when: vm_scg_disable_paste | bool
+- include_tasks: vm_scg_disable_disk_shrink.yml
+  when: vm_scg_disable_disk_shrink | bool
+- include_tasks: vm_scg_disable_disk_wiper.yml
+  when: vm_scg_disable_disk_wiper | bool
+- include_tasks: vm_scg_disable_3d.yml
+  when: vm_scg_disable_3d | bool
+- include_tasks: vm_scg_limit_vmrc.yml
+  when: vm_scg_limit_vmrc | bool
