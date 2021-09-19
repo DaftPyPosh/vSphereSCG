@@ -17,6 +17,17 @@
     esxi_scg_ssh: true
 
     vm_scg_disable_copy: true
+    vm_scg_disable_paste: true
+    vm_scg_disable_disk_shrink: true
+    vm_scg_disable_disk_wiper: true
+    vm_scg_disable_3d: true
+    vm_scg_limit_vmrc: true
+
+    vcenter_scg_vami_ntp: true
+    vc_ntp1: '0.pool.ntp.org'
+    vc_ntp2: '1.pool.ntp.org'
+    vc_ntp3: '2.pool.ntp.org'
+    vc_ntp4: '3.pool.ntp.org'
 
   collections:
     - daftpyposh.vspherescg
