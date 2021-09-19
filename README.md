@@ -2,6 +2,35 @@
 
 ![Logo](images/logo_1_500x126.png)
 
+- [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg)
+  - [Team Members](#team-members)
+  - [The Idea](#the-idea)
+    - [Examples around the idea](#examples-around-the-idea)
+  - [The Project](#the-project)
+    - [Goals](#goals)
+    - [Code Structure](#code-structure)
+  - [Requirements](#requirements)
+    - [vSphere](#vsphere)
+    - [Ansible](#ansible)
+  - [Usage](#usage)
+    - [Install Ansible](#install-ansible)
+    - [Install VMware Community Collection](#install-vmware-community-collection)
+    - [Run Playbook](#run-playbook)
+  - [Features](#features)
+    - [ESXi](#esxi)
+      - [esxi-7.timekeeping](#esxi-7timekeeping)
+      - [esxi-7.lockdown-mode](#esxi-7lockdown-mode)
+      - [esxi-7.disable-ssh](#esxi-7disable-ssh)
+    - [VM](#vm)
+      - [vm-7.disable-console-copy](#vm-7disable-console-copy)
+      - [vm-7.disable-console-paste](#vm-7disable-console-paste)
+      - [vm-7.disable-disk-shrinking-shrink](#vm-7disable-disk-shrinking-shrink)
+      - [vm-7.disable-disk-shrinking-wiper](#vm-7disable-disk-shrinking-wiper)
+      - [vm-7.disable-non-essential-3d-features](#vm-7disable-non-essential-3d-features)
+      - [vm-7.limit-console-connections](#vm-7limit-console-connections)
+    - [vCenter](#vcenter)
+      - [vcenter-7.vami-time](#vcenter-7vami-time)
+
 ## Team Members
 
 - Barry Browne [@barrybrowne](https://twitter.com/barrybrowne)
@@ -32,13 +61,14 @@ Some examples how this configurations are possible:
   
 80% of the configurations might be done pretty quick, the other 20% are the problem.
 
-## Goals
+## The Project
+### Goals
 
 - 100% of recommendations should be possible (as long as it's not a permanent task like "ESXi is up to date." )
 - Configurable which Recommendations should be applied
 - Deliverable as Ansible Collection via Ansible Galaxy
 
-## Code Structure
+### Code Structure
 
 The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
 
@@ -141,7 +171,7 @@ Cryptography, audit logging, cluster operations, and incident response/forensics
 - Set NTP servers
 - Set NTP Service
 
-### esxi-7.lockdown-mode
+#### esxi-7.lockdown-mode
 
 Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode.
 
@@ -197,7 +227,7 @@ As the default is the desired state you can audit by verifying that the paramete
 
 Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
 
-### vCeneter
+### vCenter
 
 #### vcenter-7.vami-time
 
