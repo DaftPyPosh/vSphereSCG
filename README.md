@@ -135,64 +135,72 @@ daftpyposh
 
 #### esxi-7.timekeeping
 
->Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
->
->- Manage NTP Firewall Rules
->- Set NTP servers
->- Set NTP Service
+Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
+
+- Manage NTP Firewall Rules
+- Set NTP servers
+- Set NTP Service
 
 ### esxi-7.lockdown-mode
->
->Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode.
->
->Note that users listed in the DCUI.Access list for each host are allowed to override lockdown mode and login to the DCUI.  
->
->By default the "root" user is the only user listed in the DCUI.Access list.
->
->There are three settings for lockdown mode: disabled, normal, and strict. The choice of strict means that if the ESXi host loses contact with vCenter Server it cannot be managed in any way until that connection is restored. If that connection cannot be restored the host will need to be rebuilt. This is beyond the needs of most deployments. As such, we recommend normal lockdown mode.Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode.
->
->Note that users listed in the DCUI.Access list for each host are allowed to override lockdown mode and login to the DCUI.  
->
->By default the "root" user is the only user listed in the DCUI.Access list.
->
->There are three settings for lockdown mode: disabled, normal, and strict. The choice of strict means that if the ESXi host loses contact with vCenter Server it cannot be managed in any way until that connection is restored. If that connection cannot be restored the host will need to be rebuilt. This is beyond the needs of most deployments. As such, we recommend normal lockdown mode.
+
+Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode.
+
+Note that users listed in the DCUI.Access list for each host are allowed to override lockdown mode and login to the DCUI.  
+
+By default the "root" user is the only user listed in the DCUI.Access list.
+
+There are three settings for lockdown mode: disabled, normal, and strict. The choice of strict means that if the ESXi host loses contact with vCenter Server it cannot be managed in any way until that connection is restored. If that connection cannot be restored the host will need to be rebuilt. This is beyond the needs of most deployments. As such, we recommend normal lockdown mode.Enabling lockdown mode disables direct access to an ESXi host and requires that the host managed remotely from vCenter Server.  This is done to ensure the roles and access controls implemented in vCenter are always enforced and users cannot bypass them by logging into a host directly.   By forcing all interaction to occur through vCenter Server, the risk of someone inadvertently attaining elevated privileges or performing tasks that are not properly audited is greatly reduced.  Note:  Lockdown mode does not apply to  users who log in using authorized keys. When you use an authorized key file for root user authentication, root users are not prevented from accessing a host with SSH even when the host is in lockdown mode.
+
+Note that users listed in the DCUI.Access list for each host are allowed to override lockdown mode and login to the DCUI.  
+
+By default the "root" user is the only user listed in the DCUI.Access list.
+
+There are three settings for lockdown mode: disabled, normal, and strict. The choice of strict means that if the ESXi host loses contact with vCenter Server it cannot be managed in any way until that connection is restored. If that connection cannot be restored the host will need to be rebuilt. This is beyond the needs of most deployments. As such, we recommend normal lockdown mode.
 
 #### esxi-7.disable-ssh
 
->ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.
-
-#### vm-7.disable-console-paste
-
->Copy and paste operations are disabled by default, however, if you explicitly disable this feature, audit controls can check that this setting is correct.
->
->As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
-
-#### vm-7.disable-disk-shrinking-shrink
-
->Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
->
->As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
-
-#### vm-7.disable-disk-shrinking-wiper
-
->Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
->
->As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
-
-#### vm-7.disable-non-essential-3d-features
-
->It is suggested that 3D be disabled on virtual machines that do not require 3D functionality, (e.g. server or desktops not using 3D applications).
->
->As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to FALSE.
-
-#### vm-7.limit-console-connections
-
->Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
+ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.
 
 ### VM
 
 #### vm-7.disable-console-copy
 
->Copy and paste operations are disabled by default. However, if you explicitly disable this feature audit controls can check that this setting is correct.
->
->As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+Copy and paste operations are disabled by default. However, if you explicitly disable this feature audit controls can check that this setting is correct.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-console-paste
+
+Copy and paste operations are disabled by default, however, if you explicitly disable this feature, audit controls can check that this setting is correct.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-disk-shrinking-shrink
+
+Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-disk-shrinking-wiper
+
+Repeated disk shrinking can make a virtual disk unavailable. Limited capability is available to non-administrative users in the guest.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to TRUE.
+
+#### vm-7.disable-non-essential-3d-features
+
+It is suggested that 3D be disabled on virtual machines that do not require 3D functionality, (e.g. server or desktops not using 3D applications).
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to FALSE.
+
+#### vm-7.limit-console-connections
+
+Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
+
+### vCeneter
+
+#### vcenter-7.vami-time
+
+Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
+
+This was configured during install so it should be audited for correctness.
