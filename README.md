@@ -14,6 +14,7 @@
     - [Ansible](#ansible)
   - [Usage](#usage)
     - [Install Ansible](#install-ansible)
+    - [Install VMware Automation SDK and Tools](#install-vmware-automation-sdk-and-tools)
     - [Install VMware Community Collection](#install-vmware-community-collection)
     - [Run Playbook](#run-playbook)
   - [Features](#features)
@@ -28,6 +29,9 @@
       - [vm-7.disable-disk-shrinking-wiper](#vm-7disable-disk-shrinking-wiper)
       - [vm-7.disable-non-essential-3d-features](#vm-7disable-non-essential-3d-features)
       - [vm-7.limit-console-connections](#vm-7limit-console-connections)
+      - [vm-7.limit-setinfo-size](#vm-7limit-setinfo-size)
+      - [vm-7.log-retention](#vm-7log-retention)
+      - [vm-7.log-rotation-size](#vm-7log-rotation-size)
     - [vCenter](#vcenter)
       - [vcenter-7.vami-time](#vcenter-7vami-time)
 
