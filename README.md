@@ -255,6 +255,20 @@ As the default is the desired state you can audit by verifying that the paramete
 
 Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
 
+#### vm-7.limit-setinfo-size
+
+The configuration file containing these name-value pairs is limited to a size of 1 MB by default. This limit is applied even when the sizeLimit parameter is not listed in the .vmx file. Uncontrolled size for the VMX file can lead to denial of service if the datastore is filled.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to 1048576.
+
+#### vm-7.log-retention
+
+By default there is a limit of 6 old diagnostic logs. The VMware documentation recommends setting this to 10 to conserve datastore space but also enable troubleshooting should it need to occur.
+
+#### vm-7.log-rotation-size
+
+By default there is no limit on VM diagnostic log sizes, and they are rotated when the VM changes power state or live-migrates using vMotion. On long-running VMs this may consume considerable space. The VMware documentation recommends setting this no lower than 2 MB (measured in KB).
+
 ### vCenter
 
 #### vcenter-7.vami-time
