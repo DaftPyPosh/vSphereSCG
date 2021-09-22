@@ -151,6 +151,34 @@ daftpyposh
 
 ### Install Ansible
 
+```pip3 install --user ansible```
+
+### Install VMware Automation SDK and Tools
+
+```
+- name: Prepare Ansible Box for my Projects
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Ansible-Lint
+    pip:
+        name: ansible-lint
+        extra_args: "--upgrade --user"
+  - name: PIP setuptools
+    pip:
+        name: setuptools
+        extra_args: "--upgrade --user"
+  - name: PIP pyVmomi
+    pip:
+        name: pyVmomi
+        extra_args: "--upgrade --user" 
+  - name: PIP VMware vSphere Automation SDK for Python
+    pip:
+        name: git+https://github.com/vmware/vsphere-automation-sdk-python.git
+        extra_args: "--upgrade --user"
+
+```
+
 ### Install VMware Community Collection
 
 ```ansible-galaxy collection install community.vmware```
