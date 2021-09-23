@@ -1,0 +1,14 @@
+---
+- name: Limit the number of retained VM diagnostic logs
+  community.vmware.vmware_guest:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: false
+    cluster: "{{ cluster_name }}"
+    uuid: "{{ item.uuid }}"
+    advanced_settings:
+      - key: "log.keepOld"
+        value: "10"
+  when: "'vCLS (' not in item.guest_name"
+  with_items: "{{ vm_filtered }}"
