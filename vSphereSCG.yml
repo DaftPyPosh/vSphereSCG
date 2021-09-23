@@ -1,4 +1,4 @@
-- name: example role by FQCN
+- name: Execute Ansible based toolkit to apply the vSphere Security Configuration Guide
   hosts: localhost
   gather_facts: false
   vars:
