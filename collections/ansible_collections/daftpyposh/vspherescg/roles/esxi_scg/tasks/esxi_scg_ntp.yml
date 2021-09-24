@@ -37,4 +37,4 @@
     validate_certs: false
     service_name: ntpd
     state: start
-    service_policy: false
+    service_policy: 'on'
