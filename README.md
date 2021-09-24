@@ -14,6 +14,7 @@
     - [Ansible](#ansible)
   - [Usage](#usage)
     - [Install Ansible](#install-ansible)
+    - [Install VMware Automation SDK and Tools](#install-vmware-automation-sdk-and-tools)
     - [Install VMware Community Collection](#install-vmware-community-collection)
     - [Run Playbook](#run-playbook)
   - [Features](#features)
@@ -28,6 +29,9 @@
       - [vm-7.disable-disk-shrinking-wiper](#vm-7disable-disk-shrinking-wiper)
       - [vm-7.disable-non-essential-3d-features](#vm-7disable-non-essential-3d-features)
       - [vm-7.limit-console-connections](#vm-7limit-console-connections)
+      - [vm-7.limit-setinfo-size](#vm-7limit-setinfo-size)
+      - [vm-7.log-retention](#vm-7log-retention)
+      - [vm-7.log-rotation-size](#vm-7log-rotation-size)
     - [vCenter](#vcenter)
       - [vcenter-7.vami-time](#vcenter-7vami-time)
 
@@ -151,6 +155,34 @@ daftpyposh
 
 ### Install Ansible
 
+```pip3 install --user ansible```
+
+### Install VMware Automation SDK and Tools
+
+```
+- name: Prepare Ansible Box for my Projects
+  hosts: localhost
+  gather_facts: false
+  tasks:
+  - name: Ansible-Lint
+    pip:
+        name: ansible-lint
+        extra_args: "--upgrade --user"
+  - name: PIP setuptools
+    pip:
+        name: setuptools
+        extra_args: "--upgrade --user"
+  - name: PIP pyVmomi
+    pip:
+        name: pyVmomi
+        extra_args: "--upgrade --user" 
+  - name: PIP VMware vSphere Automation SDK for Python
+    pip:
+        name: git+https://github.com/vmware/vsphere-automation-sdk-python.git
+        extra_args: "--upgrade --user"
+
+```
+
 ### Install VMware Community Collection
 
 ```ansible-galaxy collection install community.vmware```
@@ -226,6 +258,20 @@ As the default is the desired state you can audit by verifying that the paramete
 #### vm-7.limit-console-connections
 
 Multiple users can connect to a single VM console and observe activity. Limiting this to 1 prevents this behavior.
+
+#### vm-7.limit-setinfo-size
+
+The configuration file containing these name-value pairs is limited to a size of 1 MB by default. This limit is applied even when the sizeLimit parameter is not listed in the .vmx file. Uncontrolled size for the VMX file can lead to denial of service if the datastore is filled.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to 1048576.
+
+#### vm-7.log-retention
+
+By default there is a limit of 6 old diagnostic logs. The VMware documentation recommends setting this to 10 to conserve datastore space but also enable troubleshooting should it need to occur.
+
+#### vm-7.log-rotation-size
+
+By default there is no limit on VM diagnostic log sizes, and they are rotated when the VM changes power state or live-migrates using vMotion. On long-running VMs this may consume considerable space. The VMware documentation recommends setting this no lower than 2 MB (measured in KB).
 
 ### vCenter
 

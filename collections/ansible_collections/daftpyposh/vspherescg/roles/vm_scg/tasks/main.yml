@@ -31,3 +31,9 @@
   when: vm_scg_disable_3d | bool
 - include_tasks: vm_scg_limit_vmrc.yml
   when: vm_scg_limit_vmrc | bool
+- include_tasks: vm_scg_limit_setinfo.yml
+  when: vm_scg_limit_setinfo | bool
+- include_tasks: vm_scg_log_retention.yml
+  when: vm_scg_log_retention | bool
+- include_tasks: vm_scg_log_rotation.yml
+  when: vm_scg_log_rotation | bool
