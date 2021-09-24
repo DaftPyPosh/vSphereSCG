@@ -47,7 +47,7 @@
 
 ## The Idea
 
-An Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing infrastructure.
+We have decided to write an Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing ESXi deployment.
 
 ### Examples around the idea
 
@@ -63,7 +63,7 @@ Some examples how this configurations are possible:
 - <https://mycloudrevolution.com/en/2019/05/27/vsphere-vm-security-configuration-with-ansible/>
 - <https://mycloudrevolution.com/en/2019/04/09/vmware-esxi-security-configuration-with-ansible/>
   
-80% of the configurations might be done pretty quick, the other 20% are the problem.
+As with all projects, 80% of the configuratio can be done pretty quickly, it is the the other 20% that is the problem.
 
 ## The Project
 ### Goals
@@ -143,7 +143,7 @@ daftpyposh
 
 ### vSphere
 
-- Only vSphere Clusters can be managed, no single Hosts
+- The code can only be run against vSphere Clusters.  It is not supported on a single host.
 - VMware vSphere 7.0+
 
 ### Ansible
