@@ -6,3 +6,11 @@
   when: esxi_scg_lockdown | bool
 - include_tasks: esxi_scg_ssh.yml
   when: esxi_scg_ssh | bool
+- include_tasks: esxi_scg_accountlockfailures.yml
+  when: esxi_scg_accountlockfailures | bool
+- include_tasks: esxi_scg_accountunlocktime.yml
+  when: esxi_scg_accountunlocktime | bool
+- include_tasks: esxi_scg_passwordhistory.yml
+  when: esxi_scg_passwordhistory | bool
+- include_tasks: esxi_scg_passwordpolicies.yml
+  when: esxi_scg_passwordpolicies | bool

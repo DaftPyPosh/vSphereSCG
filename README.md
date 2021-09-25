@@ -22,6 +22,10 @@
       - [esxi-7.timekeeping](#esxi-7timekeeping)
       - [esxi-7.lockdown-mode](#esxi-7lockdown-mode)
       - [esxi-7.disable-ssh](#esxi-7disable-ssh)
+    - [esxi-7.account-auto-unlock-time](#esxi-7account-auto-unlock-time)
+    - [esxi-7.account-lockout](#esxi-7account-lockout)
+    - [esxi-7.account-password-history](#esxi-7account-password-history)
+    - [esxi-7.account-password-policies](#esxi-7account-password-policies)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -75,7 +79,7 @@ As with all projects, 80% of the configuratio can be done pretty quickly, it is 
 
 ### Code Structure
 
-The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
+The Project is shipped as an Ansible Collection with Roles. The Roles contain the Hardening Tasks for the infrastructure objects.
 
 ``` Markdown
 daftpyposh
@@ -96,7 +100,12 @@ daftpyposh
      │   │   └── main.yml
      │   ├── README.md
      │   ├── tasks
-     │   │   ├── esxi_scg_ntp.yml
+     │   │   ├── esxi_scg_accountlockfailures.yml
+     │   │   ├── esxi_scg_accountunlocktime.yml
+     │   │   ├── esxi_scg_lockdown.yml
+     |   |   ├── esxi_scg_ntp.yml
+     │   │   ├── esxi_scg_passwordhistory.yml
+     │   │   ├── esxi_scg_ssh.yml
      │   │   └── main.yml
      │   ├── templates
      │   ├── tests
@@ -114,7 +123,8 @@ daftpyposh
      │   │   └── main.yml
      │   ├── README.md
      │   ├── tasks
-     │   │   └── main.yml
+     │   │   ├── main.yml
+     │   │   └── vcenter_scg_vami_ntp.yml
      │   ├── templates
      │   ├── tests
      │   │   ├── inventory
@@ -131,7 +141,16 @@ daftpyposh
          │   └── main.yml
          ├── README.md
          ├── tasks
-         │   └── main.yml
+         │   ├── main.yml
+         │   ├── vm_scg_disable_3d.yml
+         │   ├── vm_scg_disable_copy.yml
+         │   ├── vm_scg_disable_disk_shrink.yml
+         │   ├── vm_scg_disable_disk_wiper.yml
+         │   ├── vm_scg_disable_paste.yml
+         │   ├── vm_scg_limit_setinfo.yml
+         │   ├── vm_scg_limit_vmrc.yml
+         │   ├── vm_scg_log_retention.yml
+         │   └── vm_scg_log_rotation.yml
          ├── templates
          ├── tests
          │   ├── inventory
@@ -223,6 +242,24 @@ There are three settings for lockdown mode: disabled, normal, and strict. The ch
 #### esxi-7.disable-ssh
 
 ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.
+
+### esxi-7.account-auto-unlock-time
+
+Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold. However, as this can be used to deny service an unlock period is often specified.
+
+### esxi-7.account-lockout
+
+Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold.
+
+### esxi-7.account-password-history
+
+Because of password complexity guidelines users will sometimes attempt to reuse older passwords. This setting prevents that.
+
+### esxi-7.account-password-policies
+
+It is important to use passwords that are not easily guessed and that are difficult for password generators to determine. Password strength and complexity rules apply to all ESXi users, including root. They do not apply to Active Directory users when the ESX host is joined to a domain, as those password policies are enforced by AD.
+
+More information can be found at <https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-DC96FFDB-F5F2-43EC-8C73-05ACDAE6BE43.html>
 
 ### VM
 
