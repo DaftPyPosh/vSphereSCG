@@ -19,6 +19,12 @@
     esxi_scg_accountunlocktime: true
     esxi_scg_passwordhistory: true
     esxi_scg_passwrodpolicies: true
+    esxi_scg_dcuitimeout: true
+    esxi_scg_networkbpdu: true
+    esxi_scg_shellinteractivetimeout: true
+    esxi_scg_shelltimeout: true
+    esxi_scg_shellwarning: true
+    esxi_scg_tlsprotocols: true
 
     vm_scg_disable_copy: true
     vm_scg_disable_paste: true

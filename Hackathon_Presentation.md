@@ -1,6 +1,6 @@
 # VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
-![Logo](images/logo_2_500x126.png)
+![Logo](images/Logo_2_500x126.png)
 
 ## Team Members
 
