@@ -1,6 +1,6 @@
 # VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
-![Logo](images/logo_1_500x126.png)
+![Logo](images/logo_2_500x126.png)
 
 - [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg)
   - [Team Members](#team-members)
@@ -39,11 +39,11 @@
 
 - Barry Browne [@barrybrowne](https://twitter.com/barrybrowne)
 - Bill Kindle [@billkindle](https://www.linkedin.com/in/billkindle/)
-- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
 - David Prows [@Commputethis](https://twitter.com/commputethis)
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
+<!---- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)--->
 
 ## The Idea
 
@@ -66,6 +66,7 @@ Some examples how this configurations are possible:
 As with all projects, 80% of the configuratio can be done pretty quickly, it is the the other 20% that is the problem.
 
 ## The Project
+
 ### Goals
 
 - 100% of recommendations should be possible (as long as it's not a permanent task like "ESXi is up to date." )
@@ -159,7 +160,7 @@ daftpyposh
 
 ### Install VMware Automation SDK and Tools
 
-```
+``` Ansible
 - name: Prepare Ansible Box for my Projects
   hosts: localhost
   gather_facts: false
