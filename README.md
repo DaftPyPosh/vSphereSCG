@@ -33,6 +33,8 @@
     - [esxi-7.shell-timeout](#esxi-7shell-timeout)
     - [esxi-7.shell-warning](#esxi-7shell-warning)
     - [esxi-7.tls-protocols](#esxi-7tls-protocols)
+    - [esxi-7.transparent-page-sharing](#esxi-7transparent-page-sharing)
+    - [esxi-7.vib-trusted-binaries](#esxi-7vib-trusted-binaries)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -117,7 +119,9 @@ daftpyposh
      │   │   ├── esxi_scg_passwordhistory.yml
      │   │   ├── esxi_scg_passwordpolicies.yml
      │   │   ├── esxi_scg_ssh.yml
+     │   │   ├── esxi_scg_transparentpagesharing.yml
      │   │   ├── esxi_scg_tlsprotocols.yml
+     │   │   ├── esxi_scg_vibtrustedbinaries.yml
      │   │   └── main.yml
      │   ├── templates
      │   ├── tests
@@ -308,6 +312,18 @@ SSH and the ESXi Shell are troubleshooting and support interfaces, and are inten
 ### esxi-7.tls-protocols
 
 ESXi 7 ships with TLS 1.2 enabled.
+
+### esxi-7.transparent-page-sharing
+
+Transparent Page Sharing (TPS) is a method to reduce the memory footprint of virtual machines. Under highly controlled conditions it can be used to gain unauthorized access to data on neighboring virtual machines.
+
+VMs that do not have the sched.mem.pshare.salt option set cannot share memory with any other VMs.
+
+Large page sizes, a performance optimization in the hypervisor on many modern CPUs, is incompatible with TPS.
+
+### esxi-7.vib-trusted-binaries
+
+ESXi conducts integrity checks of "vSphere Installable Bundles" or VIBs, governed by the Acceptance Level (see below). Instructing ESXi to only execute binaries that originated from a valid VIB installed on the host makes it harder for attackers to use prebuilt toolkits during a compromise, and increases chances of detection.
 
 ### VM
 

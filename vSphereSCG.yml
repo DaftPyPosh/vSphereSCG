@@ -25,6 +25,8 @@
     esxi_scg_shelltimeout: true
     esxi_scg_shellwarning: true
     esxi_scg_tlsprotocols: true
+    esxi_scg_transparentpagesharing: true
+    esxi_scg_vibtrustedbinaries: true
 
     vm_scg_disable_copy: true
     vm_scg_disable_paste: true

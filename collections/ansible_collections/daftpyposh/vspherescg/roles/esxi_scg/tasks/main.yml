@@ -28,3 +28,7 @@
   when: esxi_scg_shellwarning | bool
 - include_tasks: esxi_scg_tlsprotocols.yml
   when: esxi_scg_tlsprotocols | bool
+- include_tasks: esxi_scg_transparentpageshareing.yml
+  when: esxi_scg_transparentpageshareing | bool
+- include_tasks: esxi_scg_vibtrustedbinaries.yml
+  when: esxi_scg_vibtrustedbinaries | bool
