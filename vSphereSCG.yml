@@ -15,6 +15,10 @@
 
     esxi_scg_lockdown: true
     esxi_scg_ssh: true
+    esxi_scg_accountlockfailures: true
+    esxi_scg_accountunlocktime: true
+    esxi_scg_passwordhistory: true
+    esxi_scg_passwrodpolicies: true
 
     vm_scg_disable_copy: true
     vm_scg_disable_paste: true

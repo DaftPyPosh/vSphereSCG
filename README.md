@@ -1,6 +1,6 @@
 # VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
-![Logo](images/logo_1_500x126.png)
+![Logo](images/logo_2_500x126.png)
 
 - [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg)
   - [Team Members](#team-members)
@@ -22,6 +22,10 @@
       - [esxi-7.timekeeping](#esxi-7timekeeping)
       - [esxi-7.lockdown-mode](#esxi-7lockdown-mode)
       - [esxi-7.disable-ssh](#esxi-7disable-ssh)
+    - [esxi-7.account-auto-unlock-time](#esxi-7account-auto-unlock-time)
+    - [esxi-7.account-lockout](#esxi-7account-lockout)
+    - [esxi-7.account-password-history](#esxi-7account-password-history)
+    - [esxi-7.account-password-policies](#esxi-7account-password-policies)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -39,11 +43,11 @@
 
 - Barry Browne [@barrybrowne](https://twitter.com/barrybrowne)
 - Bill Kindle [@billkindle](https://www.linkedin.com/in/billkindle/)
-- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
 - David Prows [@Commputethis](https://twitter.com/commputethis)
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
+<!---- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)--->
 
 ## The Idea
 
@@ -66,6 +70,7 @@ Some examples how this configurations are possible:
 As with all projects, 80% of the configuratio can be done pretty quickly, it is the the other 20% that is the problem.
 
 ## The Project
+
 ### Goals
 
 - 100% of recommendations should be possible (as long as it's not a permanent task like "ESXi is up to date." )
@@ -74,7 +79,7 @@ As with all projects, 80% of the configuratio can be done pretty quickly, it is 
 
 ### Code Structure
 
-The Project is shipped as an Ansible Collection with Roles. The Roles do contain the Hardening Tasks for the infrastructure objects.
+The Project is shipped as an Ansible Collection with Roles. The Roles contain the Hardening Tasks for the infrastructure objects.
 
 ``` Markdown
 daftpyposh
@@ -95,7 +100,12 @@ daftpyposh
      │   │   └── main.yml
      │   ├── README.md
      │   ├── tasks
-     │   │   ├── esxi_scg_ntp.yml
+     │   │   ├── esxi_scg_accountlockfailures.yml
+     │   │   ├── esxi_scg_accountunlocktime.yml
+     │   │   ├── esxi_scg_lockdown.yml
+     |   |   ├── esxi_scg_ntp.yml
+     │   │   ├── esxi_scg_passwordhistory.yml
+     │   │   ├── esxi_scg_ssh.yml
      │   │   └── main.yml
      │   ├── templates
      │   ├── tests
@@ -113,7 +123,8 @@ daftpyposh
      │   │   └── main.yml
      │   ├── README.md
      │   ├── tasks
-     │   │   └── main.yml
+     │   │   ├── main.yml
+     │   │   └── vcenter_scg_vami_ntp.yml
      │   ├── templates
      │   ├── tests
      │   │   ├── inventory
@@ -130,7 +141,16 @@ daftpyposh
          │   └── main.yml
          ├── README.md
          ├── tasks
-         │   └── main.yml
+         │   ├── main.yml
+         │   ├── vm_scg_disable_3d.yml
+         │   ├── vm_scg_disable_copy.yml
+         │   ├── vm_scg_disable_disk_shrink.yml
+         │   ├── vm_scg_disable_disk_wiper.yml
+         │   ├── vm_scg_disable_paste.yml
+         │   ├── vm_scg_limit_setinfo.yml
+         │   ├── vm_scg_limit_vmrc.yml
+         │   ├── vm_scg_log_retention.yml
+         │   └── vm_scg_log_rotation.yml
          ├── templates
          ├── tests
          │   ├── inventory
@@ -159,7 +179,7 @@ daftpyposh
 
 ### Install VMware Automation SDK and Tools
 
-```
+``` Ansible
 - name: Prepare Ansible Box for my Projects
   hosts: localhost
   gather_facts: false
@@ -222,6 +242,24 @@ There are three settings for lockdown mode: disabled, normal, and strict. The ch
 #### esxi-7.disable-ssh
 
 ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.
+
+### esxi-7.account-auto-unlock-time
+
+Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold. However, as this can be used to deny service an unlock period is often specified.
+
+### esxi-7.account-lockout
+
+Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold.
+
+### esxi-7.account-password-history
+
+Because of password complexity guidelines users will sometimes attempt to reuse older passwords. This setting prevents that.
+
+### esxi-7.account-password-policies
+
+It is important to use passwords that are not easily guessed and that are difficult for password generators to determine. Password strength and complexity rules apply to all ESXi users, including root. They do not apply to Active Directory users when the ESX host is joined to a domain, as those password policies are enforced by AD.
+
+More information can be found at <https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-DC96FFDB-F5F2-43EC-8C73-05ACDAE6BE43.html>
 
 ### VM
 
