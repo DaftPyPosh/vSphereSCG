@@ -5,6 +5,10 @@
 esxi_scg_ntp: false
 esxi_scg_lockdown: false
 esxi_scg_ssh: false
+esxi_scg_accountlockfailures: false
+esxi_scg_accountunlocktime: false
+esxi_scg_passwordhistory: false
+esxi_scg_passwordpolicies: false
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'
