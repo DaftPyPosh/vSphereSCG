@@ -1,4 +1,4 @@
-- name: Set Net Block Guest BPDU
+- name: Set Shell Timeout
   vmware_host_config_manager:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
@@ -6,4 +6,4 @@
     cluster_name: "{{ cluster_name }}"
     validate_certs: no
     options:
-      "Net.BlockGuestBPDU": 1
+      "UserVars.ESXiShellTimeOut": 600
