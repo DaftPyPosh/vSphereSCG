@@ -16,3 +16,5 @@
 
 - include_tasks: vcenter_scg_vami_ntp.yml
   when: vcenter_scg_vami_ntp | bool
+- include_tasks: vcenter_scg_vami_syslog.yml
+  when: vcenter_scg_vami_syslog | bool

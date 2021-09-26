@@ -47,6 +47,7 @@
       - [vm-7.log-rotation-size](#vm-7log-rotation-size)
     - [vCenter](#vcenter)
       - [vcenter-7.vami-time](#vcenter-7vami-time)
+      - [vcenter-7.vami-syslog](#vcenter-7vami-syslog)
 
 ## Team Members
 
@@ -385,3 +386,7 @@ By default there is no limit on VM diagnostic log sizes, and they are rotated wh
 Cryptography, audit logging, cluster operations, and incident response/forensics depend deeply on synchronized time. The recommendation for NTP is to have at least four sources. Do not have two sources (one source is preferable to two).
 
 This was configured during install so it should be audited for correctness.
+
+#### vcenter-7.vami-syslog
+
+Remote logging to a central log host provides a secure, centralized store for vCenter Server logs. By gathering host log files onto a central host you can more easily monitor all hosts with a single tool. You can also do aggregate analysis and searching to look for such things as coordinated attacks on multiple hosts. Logging to a secure, centralized log server helps prevent log tampering and also provides a long-term audit record.
