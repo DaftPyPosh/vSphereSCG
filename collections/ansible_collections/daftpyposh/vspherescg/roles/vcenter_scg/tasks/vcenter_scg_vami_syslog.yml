@@ -1,0 +1,23 @@
+---
+- name: Set vCenter VAMI Syslog Forwarding
+  uri:
+    url: https://{{ vcenter_hostname }}/api/appliance/logging/forwarding
+    validate_certs: false
+    timeout: 60
+    method: PUT
+    body_format: json
+    status_code: 204
+    return_content: true
+    headers:
+      Content-Type: application/json
+      vmware-api-session-id: "{{ vc_token }}"
+    body: |
+        {
+        "cfg_list": [
+            {
+              "hostname":"{{ vc_syslog_hostname }}",
+              "port":"{{ vc_syslog_port }}",
+              "protocol":"{{ vc_syslog_protocol }}"
+            }
+            ]
+        }

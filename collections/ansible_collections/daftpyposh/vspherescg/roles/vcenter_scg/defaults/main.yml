@@ -2,6 +2,7 @@
 # defaults file for vcenter_scg
 ## Choose Setup
 vcenter_scg_vami_ntp: false
+vcenter_scg_vami_syslog: false
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'
@@ -14,3 +15,8 @@ vc_ntp1: '0.pool.ntp.org'
 vc_ntp2: '1.pool.ntp.org'
 vc_ntp3: '2.pool.ntp.org'
 vc_ntp4: '3.pool.ntp.org'
+
+## Syslog
+vc_syslog_hostname: 'syslog.lab.local'
+vc_syslog_port: '514'
+vc_syslog_protocol: 'UDP'
