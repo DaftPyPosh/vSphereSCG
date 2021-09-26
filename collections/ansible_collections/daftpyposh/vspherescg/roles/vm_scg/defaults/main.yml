@@ -12,6 +12,7 @@ vm_scg_limit_setinfo: false
 vm_scg_log_retention: false
 vm_scg_log_rotation: false
 vm_scg_restrict_host_info: false
+vm_scg_vmrc_lock: False
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'

@@ -1,0 +1,14 @@
+---
+- name: Lock the VM guest session when the remote console is disconnected
+  community.vmware.vmware_guest_custom_attributes:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: false
+    uuid: "{{ item.uuid }}"
+    state: present
+    attributes:
+      - name: "tools.guest.desktop.autolock"
+        value: 'True'
+  when: "'vCLS (' not in item.guest_name"
+  with_items: "{{ vm_filtered }}"
