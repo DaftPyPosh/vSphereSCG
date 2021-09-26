@@ -1,6 +1,6 @@
 # VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
-![Logo](images/logo_2_500x126.png)
+![Logo](images/Logo_2_500x126.png)
 
 ## Team Members
 
@@ -10,6 +10,7 @@
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
+- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
 
 ## The Idea
 

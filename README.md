@@ -1,6 +1,6 @@
 # VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
 
-![Logo](images/logo_2_500x126.png)
+![Logo](images/Logo_2_500x126.png)
 
 - [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg)
   - [Team Members](#team-members)
@@ -22,10 +22,19 @@
       - [esxi-7.timekeeping](#esxi-7timekeeping)
       - [esxi-7.lockdown-mode](#esxi-7lockdown-mode)
       - [esxi-7.disable-ssh](#esxi-7disable-ssh)
-    - [esxi-7.account-auto-unlock-time](#esxi-7account-auto-unlock-time)
-    - [esxi-7.account-lockout](#esxi-7account-lockout)
-    - [esxi-7.account-password-history](#esxi-7account-password-history)
-    - [esxi-7.account-password-policies](#esxi-7account-password-policies)
+      - [esxi-7.account-auto-unlock-time](#esxi-7account-auto-unlock-time)
+      - [esxi-7.account-lockout](#esxi-7account-lockout)
+      - [esxi-7.account-password-history](#esxi-7account-password-history)
+      - [esxi-7.account-password-policies](#esxi-7account-password-policies)
+      - [esxi.dcui-timeout](#esxidcui-timeout)
+      - [esxi-7.disable-mob](#esxi-7disable-mob)
+      - [esxi-7.network-bpdu](#esxi-7network-bpdu)
+      - [esxi-7.shell-interactive-timeout](#esxi-7shell-interactive-timeout)
+      - [esxi-7.shell-timeout](#esxi-7shell-timeout)
+      - [esxi-7.shell-warning](#esxi-7shell-warning)
+      - [esxi-7.tls-protocols](#esxi-7tls-protocols)
+      - [esxi-7.transparent-page-sharing](#esxi-7transparent-page-sharing)
+      - [esxi-7.vib-trusted-binaries](#esxi-7vib-trusted-binaries)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -47,7 +56,7 @@
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
-<!---- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)--->
+- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
 
 ## The Idea
 
@@ -102,10 +111,20 @@ daftpyposh
      │   ├── tasks
      │   │   ├── esxi_scg_accountlockfailures.yml
      │   │   ├── esxi_scg_accountunlocktime.yml
+     │   │   ├── esxi_scg_dcuitimeout.yml
      │   │   ├── esxi_scg_lockdown.yml
+     │   │   ├── esxi_scg_mob.yml
+     │   │   ├── esxi_scg_networkbpdu.yml
      |   |   ├── esxi_scg_ntp.yml
      │   │   ├── esxi_scg_passwordhistory.yml
+     │   │   ├── esxi_scg_passwordpolicies.yml
+     │   │   ├── esxi_scg_shellinteractivetimeout.yml
+     │   │   ├── esxi_scg_shelltimeout.yml
+     │   │   ├── esxi_scg_shellwarning.yml
      │   │   ├── esxi_scg_ssh.yml
+     │   │   ├── esxi_scg_transparentpagesharing.yml
+     │   │   ├── esxi_scg_tlsprotocols.yml
+     │   │   ├── esxi_scg_vibtrustedbinaries.yml
      │   │   └── main.yml
      │   ├── templates
      │   ├── tests
@@ -243,23 +262,71 @@ There are three settings for lockdown mode: disabled, normal, and strict. The ch
 
 ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.
 
-### esxi-7.account-auto-unlock-time
+#### esxi-7.account-auto-unlock-time
 
 Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold. However, as this can be used to deny service an unlock period is often specified.
 
-### esxi-7.account-lockout
+#### esxi-7.account-lockout
 
 Multiple account login failures for the same account can indicate a security problem. Such attempts to brute force the system should be limited by locking out the account after reaching a threshold.
 
-### esxi-7.account-password-history
+#### esxi-7.account-password-history
 
 Because of password complexity guidelines users will sometimes attempt to reuse older passwords. This setting prevents that.
 
-### esxi-7.account-password-policies
+#### esxi-7.account-password-policies
 
 It is important to use passwords that are not easily guessed and that are difficult for password generators to determine. Password strength and complexity rules apply to all ESXi users, including root. They do not apply to Active Directory users when the ESX host is joined to a domain, as those password policies are enforced by AD.
 
 More information can be found at <https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-DC96FFDB-F5F2-43EC-8C73-05ACDAE6BE43.html>
+
+#### esxi.dcui-timeout
+
+DCUI is used for directly logging into ESXi host and carrying out host management tasks. The idle connections to DCUI must be terminated to avoid any unintended usage of the DCUI originating from a left over login session.
+
+#### esxi-7.disable-mob
+
+The managed object browser (MOB) provides a way to explore the object model used by the VMkernel to manage the host; it enables configurations to be changed as well. This interface is meant to be used primarily for debugging the vSphere SDK. Please audit your ESXi servers to ensure someone hasn't turned on the MOB.
+
+#### esxi-7.network-bpdu
+
+BPDU Guard and Portfast are commonly enabled on the physical switch to which the ESXi host is directly connected to reduce the spanning tree convergence delay.
+
+If a BPDU packet is sent from a virtual machine on the ESXi host to the physical switch so configured, a cascading lockout of all the uplink interfaces from the ESXi host can occur.
+
+To prevent this type of lockout, BPDU Filter can be enabled on the ESXi host to drop any BPDU packets being sent to the physical switch.
+
+Some network-oriented workloads can legitimately generate BPDU packets. The administrator should verify that there are no legitimate BPDU packets generated by virtual machines on the ESXi host prior to enabling BPDU Filter.
+
+If BPDU Filter is enabled in this situation, enabling Reject Forged Transmits on the virtual switch port group adds protection against Spanning Tree loops.
+
+#### esxi-7.shell-interactive-timeout
+
+If a user forgets to log out of their SSH session, the idle connection will remains open indefinitely, increasing the potential for someone to gain privileged access to the host.  The ESXiShellInteractiveTimeOut allows you to automatically terminate idle shell sessions.
+
+#### esxi-7.shell-timeout
+
+When the ESXi Shell or SSH services are enabled on a host they will run indefinitely.  To avoid having these services left running set the ESXiShellTimeOut.  The ESXiShellTimeOut defines a window of time after which the ESXi Shell and SSH services will automatically be terminated.
+
+#### esxi-7.shell-warning
+
+SSH and the ESXi Shell are troubleshooting and support interfaces, and are intentionally stopped and disabled by default. Enablement of those interfaces brings risk. Dismissal of the warning masks potential risk present.
+
+#### esxi-7.tls-protocols
+
+ESXi 7 ships with TLS 1.2 enabled.
+
+#### esxi-7.transparent-page-sharing
+
+Transparent Page Sharing (TPS) is a method to reduce the memory footprint of virtual machines. Under highly controlled conditions it can be used to gain unauthorized access to data on neighboring virtual machines.
+
+VMs that do not have the sched.mem.pshare.salt option set cannot share memory with any other VMs.
+
+Large page sizes, a performance optimization in the hypervisor on many modern CPUs, is incompatible with TPS.
+
+#### esxi-7.vib-trusted-binaries
+
+ESXi conducts integrity checks of "vSphere Installable Bundles" or VIBs, governed by the Acceptance Level (see below). Instructing ESXi to only execute binaries that originated from a valid VIB installed on the host makes it harder for attackers to use prebuilt toolkits during a compromise, and increases chances of detection.
 
 ### VM
 

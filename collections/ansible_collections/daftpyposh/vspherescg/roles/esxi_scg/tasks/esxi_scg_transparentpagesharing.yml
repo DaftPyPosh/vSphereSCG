@@ -1,4 +1,4 @@
-- name: Set Password History
+- name: Set Transparent Page Sharing Restriction
   vmware_host_config_manager:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
@@ -6,4 +6,4 @@
     cluster_name: "{{ cluster_name }}"
     validate_certs: false
     options:
-      "Security.PasswordHistory": 5
+      "Mem.ShareForceSalting": 2

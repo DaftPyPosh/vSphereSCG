@@ -19,6 +19,14 @@
     esxi_scg_accountunlocktime: true
     esxi_scg_passwordhistory: true
     esxi_scg_passwrodpolicies: true
+    esxi_scg_dcuitimeout: true
+    esxi_scg_networkbpdu: true
+    esxi_scg_shellinteractivetimeout: true
+    esxi_scg_shelltimeout: true
+    esxi_scg_shellwarning: true
+    esxi_scg_tlsprotocols: true
+    esxi_scg_transparentpagesharing: true
+    esxi_scg_vibtrustedbinaries: true
 
     vm_scg_disable_copy: true
     vm_scg_disable_paste: true
@@ -29,7 +37,6 @@
     vm_scg_limit_setinfo: true
     vm_scg_log_retention: true
     vm_scg_log_rotation: true
-
 
     vcenter_scg_vami_ntp: true
     vc_ntp1: '0.pool.ntp.org'

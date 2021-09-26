@@ -14,3 +14,21 @@
   when: esxi_scg_passwordhistory | bool
 - include_tasks: esxi_scg_passwordpolicies.yml
   when: esxi_scg_passwordpolicies | bool
+- include_tasks: esxi_scg_dcuitimeout.yml
+  when: esxi_scg_dcuitimeout | bool
+- include_tasks: esxi_scg_mob.yml
+  when: esxi_scg_mob | bool
+- include_tasks: esxi_scg_networkbpdu.yml
+  when: esxi_scg_networkbpdu | bool
+- include_tasks: esxi_scg_shellinteractivetimeout.yml
+  when: esxi_scg_shellinteractivetimeout | bool
+- include_tasks: esxi_scg_shelltimeout.yml
+  when: esxi_scg_shelltimeout | bool
+- include_tasks: esxi_scg_shellwarning.yml
+  when: esxi_scg_shellwarning | bool
+- include_tasks: esxi_scg_tlsprotocols.yml
+  when: esxi_scg_tlsprotocols | bool
+- include_tasks: esxi_scg_transparentpagesharing.yml
+  when: esxi_scg_transparentpagesharing | bool
+- include_tasks: esxi_scg_vibtrustedbinaries.yml
+  when: esxi_scg_vibtrustedbinaries | bool
