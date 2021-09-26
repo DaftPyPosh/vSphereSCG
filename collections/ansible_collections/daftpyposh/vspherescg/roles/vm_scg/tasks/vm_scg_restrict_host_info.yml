@@ -1,0 +1,14 @@
+---
+- name: Do not send host information to guests.
+  community.vmware.vmware_guest_custom_attributes:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    validate_certs: false
+    uuid: "{{ item.uuid }}"
+    state: present
+    attributes:
+      - name: "tools.guestlib.enableHostInfo"
+        value: 'False'
+  when: "'vCLS (' not in item.guest_name"
+  with_items: "{{ vm_filtered }}"
