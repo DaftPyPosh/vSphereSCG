@@ -56,7 +56,7 @@
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
-<!---- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)--->
+- Carl Capozza [@Carlcapozza](https://twitter.com/Carlcapozza)
 
 ## The Idea
 
