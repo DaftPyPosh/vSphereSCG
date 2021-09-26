@@ -38,6 +38,7 @@
     vm_scg_log_retention: true
     vm_scg_log_rotation: true
     vm_scg_restrict_host_info: true
+    vm_scg_vmrc_lock: true
 
     vcenter_scg_vami_ntp: true
     vc_ntp1: '0.pool.ntp.org'
