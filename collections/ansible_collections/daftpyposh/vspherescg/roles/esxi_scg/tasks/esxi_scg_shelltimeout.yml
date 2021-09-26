@@ -4,6 +4,6 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     cluster_name: "{{ cluster_name }}"
-    validate_certs: no
+    validate_certs: false
     options:
       "UserVars.ESXiShellTimeOut": 600
