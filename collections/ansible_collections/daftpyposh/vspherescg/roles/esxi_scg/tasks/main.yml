@@ -29,6 +29,6 @@
 - include_tasks: esxi_scg_tlsprotocols.yml
   when: esxi_scg_tlsprotocols | bool
 - include_tasks: esxi_scg_transparentpagesharing.yml
-  when: esxi_scg_transparentpageshareing | bool
+  when: esxi_scg_transparentpagesharing | bool
 - include_tasks: esxi_scg_vibtrustedbinaries.yml
   when: esxi_scg_vibtrustedbinaries | bool
