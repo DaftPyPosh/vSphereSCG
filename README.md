@@ -45,6 +45,8 @@
       - [vm-7.limit-setinfo-size](#vm-7limit-setinfo-size)
       - [vm-7.log-retention](#vm-7log-retention)
       - [vm-7.log-rotation-size](#vm-7log-rotation-size)
+      - [vm-7.restrict-host-info](#vm-7restrict-host-info)
+      - [vm-7.vmrc-lock](#vm-7vmrc-lock)
     - [vCenter](#vcenter)
       - [vcenter-7.vami-time](#vcenter-7vami-time)
       - [vcenter-7.vami-syslog](#vcenter-7vami-syslog)
@@ -170,7 +172,9 @@ daftpyposh
          │   ├── vm_scg_limit_setinfo.yml
          │   ├── vm_scg_limit_vmrc.yml
          │   ├── vm_scg_log_retention.yml
-         │   └── vm_scg_log_rotation.yml
+         │   ├── vm_scg_log_rotation.yml
+         │   ├── vm_scg_restrict_host_info.yml
+         │   └── vm_scg_vmrc_lock.yml
          ├── templates
          ├── tests
          │   ├── inventory
@@ -378,6 +382,16 @@ By default there is a limit of 6 old diagnostic logs. The VMware documentation r
 #### vm-7.log-rotation-size
 
 By default there is no limit on VM diagnostic log sizes, and they are rotated when the VM changes power state or live-migrates using vMotion. On long-running VMs this may consume considerable space. The VMware documentation recommends setting this no lower than 2 MB (measured in KB).
+
+#### vm-7.restrict-host-info
+
+"By enabling a VM to get detailed information about the physical host, an adversary could potentially use this information to inform further attacks on the host.
+
+As the default is the desired state you can audit by verifying that the parameter is either unset, or if it is set it is set to FALSE."
+
+#### vm-7.vmrc-lock
+
+An attacker can take advantage of console sessions left logged in.
 
 ### vCenter
 

@@ -39,3 +39,5 @@
   when: vm_scg_log_rotation | bool
 - include_tasks: vm_scg_restrict_host_info.yml
   when: vm_scg_restrict_host_info | bool
+- include_tasks: vm_scg_vmrc_lock.yml
+  when: vm_scg_vmrc_lock | bool
