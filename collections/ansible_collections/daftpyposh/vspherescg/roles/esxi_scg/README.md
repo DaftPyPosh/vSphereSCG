@@ -100,7 +100,7 @@ Example Playbook
 License
 -------
 
-BSD
+ GNU GPLv3
 
 Author Information
 ------------------
