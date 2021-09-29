@@ -1,4 +1,4 @@
-Role Name
+daftpyposh.vspherescg.vcenter_scg
 =========
 
 Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing ESXi deployment.
