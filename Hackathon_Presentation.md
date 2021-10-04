@@ -13,7 +13,7 @@
 
 ## The Idea
 
-Initially, there was a couple of us who wanted to participate in the Hackathon, but we didn't really have thoughts on what to do.  After some messaging around we found others to join the team, but we still didn't have an idea. Markus asked if a team was looking for an Ansible project.  Well, **we didn't have an idea and we all knew what Ansible is and a couple of us had a little experience using it.**  So we added Markus to the team and we decided to work on an Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing ESXi deployment.
+Initially, there was a couple of us who wanted to participate in the Hackathon, but we didn't really have thoughts on what to do.  After some messaging around various slack communities,we found enough brainpower to warrant putting a team together, however we still did not have a solid idea.  Markus asked if a team was looking for an Ansible project.  Well, **we didn't have an idea and we all knew what Ansible is and a couple of us had a little experience using it.**  So we added Markus to the team and we decided to work on an Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing ESXi deployment.
 
 ## Goals
 
@@ -33,7 +33,8 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 ## Challenges we had
 
-- The first major challenge we had was having a place to do testing of the code.  Some members of the team had a to build out a full ESXi cluster, with vCenter to test our code.
+- The first major challenge we had was having a place to do testing of the code.  Some members of the team had a to build out a full ESXi cluster, with vCenter to test our code.  Obviously, this took a significant amount of time.
+- Getting up to speed on the various technologies in play (Ansible, CentOS and git)
 - Time Zones.  We have team members spread across 3 time zones (up to 6 hours apart), 3 different countries, and 2 different continents.
 
 ## The Future
