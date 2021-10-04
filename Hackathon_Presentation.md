@@ -33,8 +33,8 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 ## Challenges we had
 
-- One challenge we had was having a place to do testing of the code.  Some had to build out a lab to be able to do testing with.
-- Time differences.  We have team members spread across 3 time zones (up to 6 hours apart), 3 different countries, and 2 different continents.
+- The first major challenge we had was having a place to do testing of the code.  Some members of the team had a to build out a full ESXi cluster, with vCenter to test our code.
+- Time Zones.  We have team members spread across 3 time zones (up to 6 hours apart), 3 different countries, and 2 different continents.
 
 ## The Future
 
