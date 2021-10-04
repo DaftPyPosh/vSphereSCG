@@ -19,7 +19,7 @@ Ansible:
 Role Variables
 --------------
 
-```
+``` Ansible
 esxi_scg_ntp: false
 esxi_scg_lockdown: false
 esxi_scg_ssh: false
@@ -36,6 +36,7 @@ esxi_scg_shellwarning: false
 esxi_scg_tlsprotocols: false
 esxi_scg_transparentpagesharing: false
 esxi_scg_vibtrustedbinaries: false
+esxi_scg_logslevel: false
 
 vcenter_hostname: 'vcenter.lab.local'
 vcenter_username: 'Administrator@vsphere.local'
@@ -47,6 +48,7 @@ ntp2: '192.168.2.101'
 ntp3: '192.168.2.102'
 ntp4: '192.168.2.103'
 ```
+
 Dependencies
 ------------
 
@@ -57,7 +59,7 @@ Colections:
 Example Playbook
 ----------------
 
-```
+``` Ansible
 - name: Execute Ansible based toolkit to apply the vSphere Security Configuration Guide
   hosts: localhost
   gather_facts: false

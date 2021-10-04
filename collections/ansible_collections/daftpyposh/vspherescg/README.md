@@ -2,21 +2,25 @@
 
 Ansible based toolkit to apply the [VMware vSphere Security Configuration Guide](https://core.vmware.com/vmware-vsphere-security-configuration-guide-7) to an existing ESXi deployment.
 
-# Requirements
+## Requirements
 
-## vSphere
+---
+
+### vSphere
 
 - The code can only be run against vSphere Clusters.  It is not supported on a single host.
 - VMware vSphere 7.0+
 
-## Ansible
+### Ansible
 
 - Ansible 2.10.3+
 - community.vmware Collection 1.14.0+
 
-# Collection Variables
+## Collection Variables
 
-```
+---
+
+``` Ansible
 vcenter_hostname: 'vcenter.lab.local'
 vcenter_username: 'Administrator@vsphere.local'
 vcenter_password: 'C0mpl3x!'
@@ -42,6 +46,7 @@ esxi_scg_shellwarning: true
 esxi_scg_tlsprotocols: true
 esxi_scg_transparentpagesharing: true
 esxi_scg_vibtrustedbinaries: true
+esxi_scg_logslevel: true
 
 vm_scg_disable_copy: true
 vm_scg_disable_paste: true
@@ -65,15 +70,18 @@ vc_syslog_hostname: 'syslog.lab.local'
 vc_syslog_port: '514'
 vc_syslog_protocol: 'UDP'
 ```
-# Dependencies
 
-## Colections
+## Dependencies
+
+---
+
+### Colections
 
 - communnity.vmware
 
-# Example Playbook
+## Example Playbook
 
-```
+``` Ansible
 - name: Execute Ansible based toolkit to apply the vSphere Security Configuration Guide
   hosts: localhost
   gather_facts: false
@@ -103,6 +111,7 @@ vc_syslog_protocol: 'UDP'
     esxi_scg_tlsprotocols: true
     esxi_scg_transparentpagesharing: true
     esxi_scg_vibtrustedbinaries: true
+    esxi_scg_logslevel: true
 
     vm_scg_disable_copy: true
     vm_scg_disable_paste: true
@@ -141,13 +150,15 @@ vc_syslog_protocol: 'UDP'
 
 ```
 
-License
--------
+## License
+
+---
 
  GNU GPLv3
 
-Author Information
-------------------
+## Author Information
+
+---
 
 - Barry Browne [@barrybrowne](https://twitter.com/barrybrowne)
 - Bill Kindle [@billkindle](https://www.linkedin.com/in/billkindle/)
@@ -155,4 +166,3 @@ Author Information
 - Jon Husen [@JonHusen](https://twitter.com/JonHusen)
 - Justin Brant [@JustinBrant93](https://twitter.com/JustinBrant93)
 - Markus Kraus [@vMarkus_K](https://twitter.com/vMarkus_K)
-
