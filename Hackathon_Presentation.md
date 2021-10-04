@@ -17,7 +17,8 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 ## The Current Status
 
-![Progress Video](https://slack-files.com/T0EANJNGH-F02GEAL2DT8-2b5512ae4c)
+[![ProgressVideo](https://user-images.githubusercontent.com/17625274/135930981-7f126dc4-3035-4c54-9997-a36fc1706375.gif)](images/ProgressVideo.mp4)
+
 
 ## Goals
 
