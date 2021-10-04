@@ -29,7 +29,7 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 - Some of us learned how to install/run our first Ansible playbook
 - We learned about Roles inside of Ansible
 - Some learned how to attach issues to merge requests in Github
-- For at least one of us, it was our first exposure to VMWare Power-CLI
+- For at least one of us, it was our first exposure to VMware Power-CLI
 
 ## Challenges we had
 
