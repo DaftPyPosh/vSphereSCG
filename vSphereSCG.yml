@@ -14,6 +14,7 @@
     ntp4: '192.168.2.103'
 
     esxi_scg_lockdown: true
+    esxi_scg_logslevel: true
     esxi_scg_ssh: true
     esxi_scg_accountlockfailures: true
     esxi_scg_accountunlocktime: true

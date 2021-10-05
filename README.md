@@ -35,6 +35,7 @@
       - [esxi-7.tls-protocols](#esxi-7tls-protocols)
       - [esxi-7.transparent-page-sharing](#esxi-7transparent-page-sharing)
       - [esxi-7.vib-trusted-binaries](#esxi-7vib-trusted-binaries)
+      - [esxi-7.logs-level](#esxi-7logs-level)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -127,6 +128,7 @@ daftpyposh
      │   │   ├── esxi_scg_transparentpagesharing.yml
      │   │   ├── esxi_scg_tlsprotocols.yml
      │   │   ├── esxi_scg_vibtrustedbinaries.yml
+     |   |   ├── esxi_scg_logslevel.yml
      │   │   └── main.yml
      │   ├── templates
      │   ├── tests
@@ -331,6 +333,10 @@ Large page sizes, a performance optimization in the hypervisor on many modern CP
 #### esxi-7.vib-trusted-binaries
 
 ESXi conducts integrity checks of "vSphere Installable Bundles" or VIBs, governed by the Acceptance Level (see below). Instructing ESXi to only execute binaries that originated from a valid VIB installed on the host makes it harder for attackers to use prebuilt toolkits during a compromise, and increases chances of detection.
+
+#### esxi-7.logs-level
+
+It is important to ensure that enough information is present in audit logs for diagnostics and forensics.
 
 ### VM
 

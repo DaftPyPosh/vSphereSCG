@@ -19,7 +19,6 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 [![ProgressVideo](https://user-images.githubusercontent.com/17625274/135930981-7f126dc4-3035-4c54-9997-a36fc1706375.gif)](images/ProgressVideo.mp4)
 
-
 ## Goals
 
 - 100% of recommendations should be possible (as long as it's not a permanent task like "ESXi is up to date." )
@@ -32,7 +31,7 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 - Some learned more about git and/or Github, like using projects, issues, and proper use of branches/merge requests
 - Some of us learned how to install/run our first Ansible playbook
-- We learned about Roles and Collections inside of Ansible
+- We learned about [Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) and [Collections](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) inside of Ansible
 - Some learned how to attach issues to merge requests in Github
 - For at least one of us, it was our first exposure to VMware PowerCLI
 - Some enjoyed the experience of a very diverse remote team
