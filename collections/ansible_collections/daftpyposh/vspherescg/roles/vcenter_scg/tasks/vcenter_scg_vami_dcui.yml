@@ -1,0 +1,17 @@
+---
+- name: Limit access to vCenter Server by restricting DCLI
+  uri:
+    url: https://{{ vcenter_hostname }}/api/appliance/access/dcui
+    validate_certs: false
+    timeout: 60
+    method: PUT
+    body_format: json
+    status_code: 204
+    return_content: true
+    headers:
+      Content-Type: application/json
+      vmware-api-session-id: "{{ vc_token }}"
+    body: |
+        {
+        "enabled":false
+        }

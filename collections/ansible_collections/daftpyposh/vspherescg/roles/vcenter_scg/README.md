@@ -34,6 +34,8 @@ vcenter_scg_vami_syslog: true
 vc_syslog_hostname: 'syslog.lab.local'
 vc_syslog_port: '514'
 vc_syslog_protocol: 'UDP'
+vcenter_scg_vami_ssh: true
+vcenter_scg_vami_dcui: true
 ```
 Dependencies
 ------------
@@ -64,6 +66,8 @@ Example Playbook
     vc_syslog_hostname: 'syslog.lab.local'
     vc_syslog_port: '514'
     vc_syslog_protocol: 'UDP'
+    vcenter_scg_vami_ssh: true
+    vcenter_scg_vami_dcui: true
 
   collections:
     - daftpyposh.vspherescg

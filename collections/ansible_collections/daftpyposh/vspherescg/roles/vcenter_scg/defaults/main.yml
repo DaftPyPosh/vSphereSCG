@@ -3,6 +3,8 @@
 ## Choose Setup
 vcenter_scg_vami_ntp: false
 vcenter_scg_vami_syslog: false
+vcenter_scg_vami_ssh: false
+vcenter_scg_vami_dcui: false
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'
