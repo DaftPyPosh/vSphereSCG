@@ -4,6 +4,8 @@
 ## Choose Setup
 esxi_scg_ntp: false
 esxi_scg_lockdown: false
+esxi_scg_logslevel: false
+esxi_scg_logspersistent: false
 esxi_scg_ssh: false
 esxi_scg_accountlockfailures: false
 esxi_scg_accountunlocktime: false
@@ -18,7 +20,6 @@ esxi_scg_shellwarning: false
 esxi_scg_tlsprotocols: false
 esxi_scg_transparentpagesharing: false
 esxi_scg_vibtrustedbinaries: false
-esxi_scg_logslevel: false
 
 ## General
 vcenter_hostname: 'vcenter.lab.local'
@@ -31,3 +32,6 @@ ntp1: '192.168.2.100'
 ntp2: '192.168.2.101'
 ntp3: '192.168.2.102'
 ntp4: '192.168.2.103'
+
+## Logs Persistent Directory
+syslog_global_directory: '[] /scratch/log'

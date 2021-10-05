@@ -1,0 +1,9 @@
+- name: Configure persistent logging
+  vmware_host_config_manager:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    cluster_name: "{{ cluster_name }}"
+    validate_certs: false
+    options:
+      "Syslog.global.logDir": "{{ syslog_global_directory }}"

@@ -36,6 +36,7 @@
       - [esxi-7.transparent-page-sharing](#esxi-7transparent-page-sharing)
       - [esxi-7.vib-trusted-binaries](#esxi-7vib-trusted-binaries)
       - [esxi-7.logs-level](#esxi-7logs-level)
+      - [esxi-7.logs-persistent](#esxi-7logs-persistent)
     - [VM](#vm)
       - [vm-7.disable-console-copy](#vm-7disable-console-copy)
       - [vm-7.disable-console-paste](#vm-7disable-console-paste)
@@ -337,6 +338,10 @@ ESXi conducts integrity checks of "vSphere Installable Bundles" or VIBs, governe
 #### esxi-7.logs-level
 
 It is important to ensure that enough information is present in audit logs for diagnostics and forensics.
+
+#### esxi-7.logs-persistent
+
+ESXi can be configured to store log files on an in-memory file system.  This occurs when the host's "/scratch" directory is linked to "/tmp/scratch". When this is done only a single day's worth of logs are stored at any time. In addition log files will be reinitialized upon each reboot.  This presents a security risk as user activity logged on the host is only stored temporarily and will not persistent across reboots.  This can also complicate auditing and make it harder to monitor events and diagnose issues.  ESXi host logging should always be configured to a persistent datastore.
 
 ### VM
 
