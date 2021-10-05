@@ -27,7 +27,9 @@
 - include_tasks: esxi_scg_shellwarning.yml
   when: esxi_scg_shellwarning | bool
 - include_tasks: esxi_scg_shelldisable.yml
-  when: esxi_scg_shellwarning | bool
+  when: esxi_scg_shelldisable | bool
+- include_tasks: esxi_scg_disableslp.yml
+  when: esxi_scg_disableslp | bool
 - include_tasks: esxi_scg_tlsprotocols.yml
   when: esxi_scg_tlsprotocols | bool
 - include_tasks: esxi_scg_transparentpagesharing.yml

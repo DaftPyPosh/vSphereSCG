@@ -16,6 +16,7 @@ esxi_scg_shellinteractivetimeout: false
 esxi_scg_shelltimeout: false
 esxi_scg_shellwarning: false
 esxi_scg_shelldisable: false
+esxi_scg_disableslp: false
 esxi_scg_tlsprotocols: false
 esxi_scg_transparentpagesharing: false
 esxi_scg_vibtrustedbinaries: false
