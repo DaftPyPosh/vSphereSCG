@@ -43,6 +43,8 @@ esxi_scg_passwordhistory: true
 esxi_scg_passwrodpolicies: true
 esxi_scg_dcuitimeout: true
 esxi_scg_networkbpdu: true
+esxi_scg_disableslp: true
+esxi_scg_shelldisable: true
 esxi_scg_shellinteractivetimeout: true
 esxi_scg_shelltimeout: true
 esxi_scg_shellwarning: true
@@ -111,6 +113,8 @@ vc_syslog_protocol: 'UDP'
     esxi_scg_passwrodpolicies: true
     esxi_scg_dcuitimeout: true
     esxi_scg_networkbpdu: true
+    esxi_scg_disableslp: true
+    esxi_scg_shelldisable: true
     esxi_scg_shellinteractivetimeout: true
     esxi_scg_shelltimeout: true
     esxi_scg_shellwarning: true

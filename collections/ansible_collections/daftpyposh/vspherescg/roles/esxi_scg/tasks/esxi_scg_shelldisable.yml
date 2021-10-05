@@ -1,0 +1,11 @@
+- name: Set Shell Disable
+  vmware_host_service_manager:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    cluster_name: "{{ cluster_name }}" 
+    validate_certs: no
+    service_name: TSM
+    state: absent
+    service_policy: off
+    

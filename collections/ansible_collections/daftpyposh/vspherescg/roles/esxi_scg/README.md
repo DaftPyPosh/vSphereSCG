@@ -30,6 +30,8 @@ esxi_scg_passwordpolicies: false
 esxi_scg_dcuitimeout: false
 esxi_scg_mob: false
 esxi_scg_networkbpdu: false
+esxi_scg_disableslp: false
+esxi_scg_shelldisable: false
 esxi_scg_shellinteractivetimeout: false
 esxi_scg_shelltimeout: false
 esxi_scg_shellwarning: false
@@ -83,6 +85,8 @@ Example Playbook
     esxi_scg_passwrodpolicies: true
     esxi_scg_dcuitimeout: true
     esxi_scg_networkbpdu: true
+    esxi_scg_disableslp: true
+    esxi_scg_shelldisable: true
     esxi_scg_shellinteractivetimeout: true
     esxi_scg_shelltimeout: true
     esxi_scg_shellwarning: true
