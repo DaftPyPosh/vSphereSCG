@@ -32,6 +32,9 @@ ntp2: '192.168.2.101'
 ntp3: '192.168.2.102'
 ntp4: '192.168.2.103'
 
+esxi_scg_logspersistent: true
+syslog_global_directory: '[] /scratch/log'
+
 esxi_scg_lockdown: true
 esxi_scg_ssh: true
 esxi_scg_accountlockfailures: true
@@ -96,6 +99,9 @@ vc_syslog_protocol: 'UDP'
     ntp2: '192.168.2.101'
     ntp3: '192.168.2.102'
     ntp4: '192.168.2.103'
+
+    esxi_scg_logspersistent: true
+    syslog_global_directory: '[] /scratch/log'
 
     esxi_scg_lockdown: true
     esxi_scg_ssh: true
