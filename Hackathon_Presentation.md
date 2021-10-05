@@ -17,7 +17,7 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 ## The Current Status
 
-[![ProgressVideo](https://user-images.githubusercontent.com/17625274/135930981-7f126dc4-3035-4c54-9997-a36fc1706375.gif)](images/ProgressVideo.mp4)
+[![ProgressVideo](https://user-images.githubusercontent.com/17625274/135930981-7f126dc4-3035-4c54-9997-a36fc1706375.gif)](https://www.youtube.com/watch?v=LEyDyiuihMg)
 
 ## Goals
 
@@ -38,8 +38,9 @@ Initially, there was a couple of us who wanted to participate in the Hackathon, 
 
 ## Challenges we had
 
-- The first major challenge we had was having a place to do testing of the code.  Some members of the team had a to build out a full ESXi cluster, with vCenter to test our code.  Obviously, this took a significant amount of time.
+- The first major challenge we had was having a place to do testing of the code.  Some members of the team had a to build out a full ESXi cluster, with vCenter to test our code.  Obviously, this took a significant amount of time since we don't do it often.
 - Getting up to speed on the various technologies in play (Ansible, CentOS and git)
+  - Many of us either haven't used Ansible or have very limited experience with it.  So we had to work our way through this.  Markus was a big help with showing us how this works.
 - Time Zones.  We have team members spread across 3 time zones (up to 6 hours apart), 3 different countries, and 2 different continents.
 
 ## The Future
