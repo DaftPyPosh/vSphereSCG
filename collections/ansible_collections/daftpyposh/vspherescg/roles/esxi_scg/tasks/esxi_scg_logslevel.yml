@@ -6,4 +6,4 @@
     cluster_name: "{{ cluster_name }}"
     validate_certs: false
     options:
-      "Config.HostAgent.log.level": 'Info'
+      "Config.HostAgent.log.level": 'info'
