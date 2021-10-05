@@ -34,5 +34,5 @@
   when: esxi_scg_vibtrustedbinaries | bool
 - include_tasks: esxi_scg_logslevel.yml
   when: esxi_scg_logslevel | bool
-- include_tasks: esxi_logspersistent.yml
+- include_tasks: esxi_scg_logspersistent.yml
   when: esxi_scg_logspersistent | bool
