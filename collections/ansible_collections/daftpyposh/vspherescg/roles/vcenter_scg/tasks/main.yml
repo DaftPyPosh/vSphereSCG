@@ -1,6 +1,6 @@
 ---
 # tasks file for vcenter_scg
-- name: Connecto to vCenter API
+- name: Connect to vCenter API
   uri:
     url: https://{{ vcenter_hostname }}/api/session
     user: "{{ vcenter_username }}"
@@ -18,3 +18,7 @@
   when: vcenter_scg_vami_ntp | bool
 - include_tasks: vcenter_scg_vami_syslog.yml
   when: vcenter_scg_vami_syslog | bool
+- include_tasks: vcenter_scg_vami_ssh.yml
+  when: vcenter_scg_vami_ssh | bool
+- include_tasks: vcenter_scg_vami_dcui.yml
+  when: vcenter_scg_vami_dcui | bool

@@ -52,6 +52,8 @@
     - [vCenter](#vcenter)
       - [vcenter-7.vami-time](#vcenter-7vami-time)
       - [vcenter-7.vami-syslog](#vcenter-7vami-syslog)
+      - [vcenter-7.vami-access-ssh](#vcenter-7vami-access-ssh)
+      - [vcenter-7.vami-access-dcli](#vcenter-7vami-access-dcli)
 
 ## Team Members
 
@@ -95,94 +97,102 @@ As with all projects, 80% of the configuratio can be done pretty quickly, it is 
 The Project is shipped as an Ansible Collection with Roles. The Roles contain the Hardening Tasks for the infrastructure objects.
 
 ``` Markdown
-daftpyposh
-└── vspherescg
- ├── docs
- ├── galaxy.yml
- ├── plugins
- │   └── README.md
- ├── README.md
- └── roles
-     ├── esxi_scg
-     │   ├── defaults
-     │   │   └── main.yml
-     │   ├── files
-     │   ├── handlers
-     │   │   └── main.yml
-     │   ├── meta
-     │   │   └── main.yml
-     │   ├── README.md
-     │   ├── tasks
-     │   │   ├── esxi_scg_accountlockfailures.yml
-     │   │   ├── esxi_scg_accountunlocktime.yml
-     │   │   ├── esxi_scg_dcuitimeout.yml
-     │   │   ├── esxi_scg_lockdown.yml
-     │   │   ├── esxi_scg_mob.yml
-     │   │   ├── esxi_scg_networkbpdu.yml
-     |   |   ├── esxi_scg_ntp.yml
-     │   │   ├── esxi_scg_passwordhistory.yml
-     │   │   ├── esxi_scg_passwordpolicies.yml
-     │   │   ├── esxi_scg_shellinteractivetimeout.yml
-     │   │   ├── esxi_scg_shelltimeout.yml
-     │   │   ├── esxi_scg_shellwarning.yml
-     │   │   ├── esxi_scg_ssh.yml
-     │   │   ├── esxi_scg_transparentpagesharing.yml
-     │   │   ├── esxi_scg_tlsprotocols.yml
-     │   │   ├── esxi_scg_vibtrustedbinaries.yml
-     |   |   ├── esxi_scg_logslevel.yml
-     │   │   └── main.yml
-     │   ├── templates
-     │   ├── tests
-     │   │   ├── inventory
-     │   │   └── test.yml
-     │   └── vars
-     │       └── main.yml
-     ├── vcenter_scg
-     │   ├── defaults
-     │   │   └── main.yml
-     │   ├── files
-     │   ├── handlers
-     │   │   └── main.yml
-     │   ├── meta
-     │   │   └── main.yml
-     │   ├── README.md
-     │   ├── tasks
-     │   │   ├── main.yml
-     │   │   └── vcenter_scg_vami_ntp.yml
-     │   ├── templates
-     │   ├── tests
-     │   │   ├── inventory
-     │   │   └── test.yml
-     │   └── vars
-     │       └── main.yml
-     └── vm_scg
-         ├── defaults
-         │   └── main.yml
-         ├── files
-         ├── handlers
-         │   └── main.yml
-         ├── meta
-         │   └── main.yml
-         ├── README.md
-         ├── tasks
-         │   ├── main.yml
-         │   ├── vm_scg_disable_3d.yml
-         │   ├── vm_scg_disable_copy.yml
-         │   ├── vm_scg_disable_disk_shrink.yml
-         │   ├── vm_scg_disable_disk_wiper.yml
-         │   ├── vm_scg_disable_paste.yml
-         │   ├── vm_scg_limit_setinfo.yml
-         │   ├── vm_scg_limit_vmrc.yml
-         │   ├── vm_scg_log_retention.yml
-         │   ├── vm_scg_log_rotation.yml
-         │   ├── vm_scg_restrict_host_info.yml
-         │   └── vm_scg_vmrc_lock.yml
-         ├── templates
-         ├── tests
-         │   ├── inventory
-         │   └── test.yml
-         └── vars
-             └── main.yml
+.
+└── daftpyposh
+    └── vspherescg
+        ├── docs
+        ├── galaxy.yml
+        ├── LICENSE
+        ├── plugins
+        │   └── README.md
+        ├── README.md
+        └── roles
+            ├── esxi_scg
+            │   ├── defaults
+            │   │   └── main.yml
+            │   ├── files
+            │   ├── handlers
+            │   │   └── main.yml
+            │   ├── meta
+            │   │   └── main.yml
+            │   ├── README.md
+            │   ├── tasks
+            │   │   ├── esxi_scg_accountlockfailures.yml
+            │   │   ├── esxi_scg_accountunlocktime.yml
+            │   │   ├── esxi_scg_dcuitimeout.yml
+            │   │   ├── esxi_scg_disableslp.yml
+            │   │   ├── esxi_scg_lockdown.yml
+            │   │   ├── esxi_scg_logslevel.yml
+            │   │   ├── esxi_scg_logspersistent.yml
+            │   │   ├── esxi_scg_mob.yml
+            │   │   ├── esxi_scg_networkbpdu.yml
+            │   │   ├── esxi_scg_ntp.yml
+            │   │   ├── esxi_scg_passwordhistory.yml
+            │   │   ├── esxi_scg_passwordpolicies.yml
+            │   │   ├── esxi_scg_shelldisable.yml
+            │   │   ├── esxi_scg_shellinteractivetimeout.yml
+            │   │   ├── esxi_scg_shelltimeout.yml
+            │   │   ├── esxi_scg_shellwarning.yml
+            │   │   ├── esxi_scg_ssh.yml
+            │   │   ├── esxi_scg_tlsprotocols.yml
+            │   │   ├── esxi_scg_transparentpagesharing.yml
+            │   │   ├── esxi_scg_vibtrustedbinaries.yml
+            │   │   └── main.yml
+            │   ├── templates
+            │   ├── tests
+            │   │   ├── inventory
+            │   │   └── test.yml
+            │   └── vars
+            │       └── main.yml
+            ├── vcenter_scg
+            │   ├── defaults
+            │   │   └── main.yml
+            │   ├── files
+            │   ├── handlers
+            │   │   └── main.yml
+            │   ├── meta
+            │   │   └── main.yml
+            │   ├── README.md
+            │   ├── tasks
+            │   │   ├── main.yml
+            │   │   ├── vcenter_scg_vami_dcui.yml
+            │   │   ├── vcenter_scg_vami_ntp.yml
+            │   │   ├── vcenter_scg_vami_ssh.yml
+            │   │   └── vcenter_scg_vami_syslog.yml
+            │   ├── templates
+            │   ├── tests
+            │   │   ├── inventory
+            │   │   └── test.yml
+            │   └── vars
+            │       └── main.yml
+            └── vm_scg
+                ├── defaults
+                │   └── main.yml
+                ├── files
+                ├── handlers
+                │   └── main.yml
+                ├── meta
+                │   └── main.yml
+                ├── README.md
+                ├── tasks
+                │   ├── main.yml
+                │   ├── vm_scg_disable_3d.yml
+                │   ├── vm_scg_disable_copy.yml
+                │   ├── vm_scg_disable_disk_shrink.yml
+                │   ├── vm_scg_disable_disk_wiper.yml
+                │   ├── vm_scg_disable_paste.yml
+                │   ├── vm_scg_limit_setinfo.yml
+                │   ├── vm_scg_limit_vmrc.yml
+                │   ├── vm_scg_log_retention.yml
+                │   ├── vm_scg_log_rotation.yml
+                │   ├── vm_scg_restrict_host_info.yml
+                │   └── vm_scg_vmrc_lock.yml
+                ├── templates
+                ├── tests
+                │   ├── inventory
+                │   └── test.yml
+                └── vars
+                    └── main.yml
 ```
 
 ## Requirements
@@ -414,3 +424,15 @@ This was configured during install so it should be audited for correctness.
 #### vcenter-7.vami-syslog
 
 Remote logging to a central log host provides a secure, centralized store for vCenter Server logs. By gathering host log files onto a central host you can more easily monitor all hosts with a single tool. You can also do aggregate analysis and searching to look for such things as coordinated attacks on multiple hosts. Logging to a secure, centralized log server helps prevent log tampering and also provides a long-term audit record.
+
+#### vcenter-7.vami-access-ssh
+
+vCenter Server is delivered as an appliance, and intended to be managed through the VAMI, vSphere Client, and APIs. SSH is a troubleshooting and support tool and should only be enabled when necessary.
+
+vCenter Server High Availability uses SSH to coordinate the replication and failover between the nodes. Use of this feature requires SSH to remain enabled.vCenter Server is delivered as an appliance, and intended to be managed through the VAMI, vSphere Client, and APIs. SSH is a troubleshooting and support tool and should only be enabled when necessary.
+
+vCenter Server High Availability uses SSH to coordinate the replication and failover between the nodes. Use of this feature requires SSH to remain enabled.
+
+#### vcenter-7.vami-access-dcli
+
+The Datacenter CLI is a CLI/API designed to speed management operations on vCenter Server appliance itself. If you are not using it we suggest disabling it to reduce attack surface.
