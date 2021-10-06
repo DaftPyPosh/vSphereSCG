@@ -1,4 +1,4 @@
-# VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG
+# VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG - Took 2nd Place
 
 ![Logo](images/Logo_2_500x126.png)
 
