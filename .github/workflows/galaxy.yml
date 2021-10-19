@@ -1,0 +1,13 @@
+name: Deploy Ansible Galaxy Collection
+
+on:
+  workflow_dispatch:
+
+uses: artis3n/ansible_galaxy_collection@v2.6.2
+with:
+    api_key: '${{ secrets.GALAXY_API_KEY }}'
+    collection_dir: collections/ansible_collections/daftpyposh/vspherescg
+    build: true
+    publish: true
+    #galaxy_version: # optional
+    #galaxy_config_file: # optional, default is galaxy.yml
