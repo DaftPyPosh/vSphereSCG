@@ -2,7 +2,8 @@
 
 ![Logo](images/Logo_2_500x126.png)
 
-- [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg)
+- [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG - Took 2nd Place](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg---took-2nd-place)
+  - [CI/CD:](#cicd)
   - [Team Members](#team-members)
   - [The Idea](#the-idea)
     - [Examples around the idea](#examples-around-the-idea)
@@ -54,6 +55,13 @@
       - [vcenter-7.vami-syslog](#vcenter-7vami-syslog)
       - [vcenter-7.vami-access-ssh](#vcenter-7vami-access-ssh)
       - [vcenter-7.vami-access-dcli](#vcenter-7vami-access-dcli)
+
+## CI/CD:
+
+| Main Branch     | Any Branch |
+| ----------- | ----------- |
+| ![Ansible-Lint](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg?branch=main)      | ![Ansible-Lint](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg)       |
+| ![Ansible-Galaxy](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/publish.yml/badge.svg?branch=main)      | ![Ansible-Galaxy](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/publish.yml/badge.svg)       |
 
 ## Team Members
 
