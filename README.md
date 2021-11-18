@@ -2,9 +2,9 @@
 
 ![Logo](images/Logo_2_500x126.png)
 
-![Ansible-Lint - Main](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg?branch=main)
+Main Branch: ![Ansible-Lint - Main](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg?branch=main)
 
-![Ansible-Lint](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg)
+Any Branch: ![Ansible-Lint](https://github.com/DaftPyPosh/vSphereSCG/actions/workflows/main.yml/badge.svg)
 
 
 - [VMware {code} Connect Hackathon 2021 - Team DaftPyPosh - vSphereSCG - Took 2nd Place](#vmware-code-connect-hackathon-2021---team-daftpyposh---vspherescg---took-2nd-place)
