@@ -1,6 +1,5 @@
 ---
 # tasks file for vm_scg
-- name: Gather all VMs
   community.vmware.vmware_vm_info:
     hostname: '{{ vcenter_hostname }}'
     username: '{{ vcenter_username }}'
